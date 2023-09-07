@@ -1,6 +1,11 @@
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
+
+/*светлая-темная тема*/
+/*
 root {
     --bg-color: white;
     --text-color: black;
@@ -17,3 +22,6 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
 }
+
+*/
+
