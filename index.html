@@ -1,17 +1,47 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="https://stroyudacha.ru/img/favicon.svg" type="image/x-icon">
-    <link rel="stylesheet" href="/style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="https://stroyudacha.ru/img/favicon.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/su_font-v3.0/style.css" />
     <title>Kiosk page</title>
 </head>
-<body>
+
+<body class="kiosk_bg kiosk_bg-fon">
     <container class="kiosk_container">
-        
+        <div class="kiosk_header">
+            <img class="kiosk_header-logo" src="/img/logo.svg" width="150px" alt="Стройудача" />
+            <img class="kiosk_header-cart" src="/img/spisok-pokupok.svg" width="150px" alt="Список покупок" />
+        </div>
+        <div class="kiosk_body">
+            <div class="kiosk_search-wrp">
+
+            </div>
+        <ul class="kiosk_searc-items"></ul>
+        <ul class="kiosk_searc-items"></ul>
+        <ul class="kiosk_searc-items"></ul>
+        <ul class="kiosk_searc-items"></ul>    
+        </div>
     </container>
- 
-<script src="/main.js"></script>    
+
+    <!--Блок для анимированного фона-->
+    <ul class="kiosk_bg-fon-circles">
+        <li><i class="house"></i></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <script src="/main.js"></script>
 </body>
+
 </html>

@@ -1,11 +1,21 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
 
-/*светлая-темная тема*/
-/*
+ }
+
+ i, 
+ svg, 
+ div,
+ p,
+ span,
+ button:hover {
+     cursor: pointer;
+ }
+
+ /*светлая-темная тема*/
+ /*
 root {
     --bg-color: white;
     --text-color: black;
@@ -25,3 +35,187 @@ body {
 
 */
 
+ .su_icon-shopping-list {
+     color: rgb(255, 255, 255);
+     font-size: 230px;
+ }
+
+ /*Градиент*/
+ .kiosk_bg {
+     background: linear-gradient(270deg, #14dd8f, #0D8556);
+     background-size: 400% 400%;
+
+     -webkit-animation: kiosk_bg 19s ease infinite;
+     -moz-animation: kiosk_bg 19s ease infinite;
+     animation: kiosk_bg 19s ease infinite;
+ }
+
+ @-webkit-keyframes kiosk_bg {
+     0% {
+         background-position: 0% 50%
+     }
+
+     50% {
+         background-position: 100% 50%
+     }
+
+     100% {
+         background-position: 0% 50%
+     }
+ }
+
+ @-moz-keyframes kiosk_bg {
+     0% {
+         background-position: 0% 50%
+     }
+
+     50% {
+         background-position: 100% 50%
+     }
+
+     100% {
+         background-position: 0% 50%
+     }
+ }
+
+ @keyframes kiosk_bg {
+     0% {
+         background-position: 0% 50%
+     }
+
+     50% {
+         background-position: 100% 50%
+     }
+
+     100% {
+         background-position: 0% 50%
+     }
+ }
+
+
+
+
+
+ /* анимированый фон*/
+
+ .kiosk_bg-fon {
+     background: #0D8556;
+     background: -webkit-linear-gradient(to left, #14dd8f, #0D8556);
+     width: 100%;
+     height: 100vh;
+
+
+ }
+
+ .kiosk_bg-fon-circles {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     overflow: hidden;
+ }
+
+ .kiosk_bg-fon-circles li {
+     position: absolute;
+     display: block;
+     list-style: none;
+     width: 20px;
+     height: 20px;
+     background: rgba(255, 255, 255, 0.2);
+     animation: animate 25s linear infinite;
+     bottom: -150px;
+
+ }
+
+ .kiosk_bg-fon-circles li:nth-child(1) {
+     left: 25%;
+     width: 80px;
+     height: 80px;
+     animation-delay: 0s;
+ }
+
+
+ .kiosk_bg-fon-circles li:nth-child(2) {
+     left: 10%;
+     width: 20px;
+     height: 20px;
+     animation-delay: 4s;
+     animation-duration: 24s;
+ }
+
+ .kiosk_bg-fon-circles li:nth-child(3) {
+     left: 70%;
+     width: 20px;
+     height: 20px;
+     animation-delay: 8s;
+ }
+
+ .kiosk_bg-fon-circles li:nth-child(4) {
+     left: 40%;
+     width: 60px;
+     height: 60px;
+     animation-delay: 0s;
+     animation-duration: 36s;
+ }
+
+ .kiosk_bg-fon-circles li:nth-child(5) {
+     left: 65%;
+     width: 20px;
+     height: 20px;
+     animation-delay: 0s;
+ }
+
+ .kiosk_bg-fon-circles li:nth-child(6) {
+     left: 75%;
+     width: 110px;
+     height: 110px;
+     animation-delay: 6s;
+ }
+
+ .kiosk_bg-fon-circles li:nth-child(7) {
+     left: 35%;
+     width: 150px;
+     height: 150px;
+     animation-delay: 14s;
+ }
+
+ .kiosk_bg-fon-circles li:nth-child(8) {
+     left: 50%;
+     width: 25px;
+     height: 25px;
+     animation-delay: 30s;
+     animation-duration: 90s;
+ }
+
+ .kiosk_bg-fon-circles li:nth-child(9) {
+     left: 20%;
+     width: 15px;
+     height: 15px;
+     animation-delay: 4s;
+     animation-duration: 70s;
+ }
+
+ .kiosk_bg-fon-circles li:nth-child(10) {
+     left: 85%;
+     width: 150px;
+     height: 150px;
+     animation-delay: 0s;
+     animation-duration: 22s;
+ }
+
+ @keyframes animate {
+
+     0% {
+         transform: translateY(0) rotate(0deg);
+         opacity: 1;
+         border-radius: 0;
+     }
+
+     100% {
+         transform: translateY(-1000px) rotate(720deg);
+         opacity: 0;
+         border-radius: 50%;
+     }
+
+ }

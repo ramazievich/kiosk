@@ -1,0 +1,135 @@
+// Place fonts/su_font.ttf in your fonts/ directory and
+// add the following to your pubspec.yaml
+// flutter:
+//   fonts:
+//    - family: su_font
+//      fonts:
+//       - asset: fonts/su_font.ttf
+import 'package:flutter/widgets.dart';
+
+class Su_font {
+  Su_font._();
+
+  static const String _fontFamily = 'su_font';
+
+  static const IconData shop_house3 = IconData(0xe900, fontFamily: _fontFamily);
+  static const IconData search2 = IconData(0xe901, fontFamily: _fontFamily);
+  static const IconData folder_open = IconData(0xe902, fontFamily: _fontFamily);
+  static const IconData catalog3 = IconData(0xe903, fontFamily: _fontFamily);
+  static const IconData shopping_list = IconData(0xe904, fontFamily: _fontFamily);
+  static const IconData 1 = IconData(0xe905, fontFamily: _fontFamily);
+  static const IconData 12 = IconData(0xe906, fontFamily: _fontFamily);
+  static const IconData 13 = IconData(0xe907, fontFamily: _fontFamily);
+  static const IconData 16 = IconData(0xe908, fontFamily: _fontFamily);
+  static const IconData 19 = IconData(0xe909, fontFamily: _fontFamily);
+  static const IconData 22 = IconData(0xe90a, fontFamily: _fontFamily);
+  static const IconData 25 = IconData(0xe90b, fontFamily: _fontFamily);
+  static const IconData 30 = IconData(0xe90c, fontFamily: _fontFamily);
+  static const IconData 32 = IconData(0xe90d, fontFamily: _fontFamily);
+  static const IconData 33 = IconData(0xe90e, fontFamily: _fontFamily);
+  static const IconData 35 = IconData(0xe90f, fontFamily: _fontFamily);
+  static const IconData 43 = IconData(0xe910, fontFamily: _fontFamily);
+  static const IconData 49 = IconData(0xe911, fontFamily: _fontFamily);
+  static const IconData 4808 = IconData(0xe912, fontFamily: _fontFamily);
+  static const IconData 4809 = IconData(0xe913, fontFamily: _fontFamily);
+  static const IconData 4811 = IconData(0xe914, fontFamily: _fontFamily);
+  static const IconData 4812 = IconData(0xe915, fontFamily: _fontFamily);
+  static const IconData 4813 = IconData(0xe916, fontFamily: _fontFamily);
+  static const IconData 4814 = IconData(0xe917, fontFamily: _fontFamily);
+  static const IconData 4815 = IconData(0xe918, fontFamily: _fontFamily);
+  static const IconData A = IconData(0xe919, fontFamily: _fontFamily);
+  static const IconData A1 = IconData(0xe91a, fontFamily: _fontFamily);
+  static const IconData A2 = IconData(0xe91b, fontFamily: _fontFamily);
+  static const IconData add_new = IconData(0xe91c, fontFamily: _fontFamily);
+  static const IconData admin = IconData(0xe91d, fontFamily: _fontFamily);
+  static const IconData admin2 = IconData(0xe91e, fontFamily: _fontFamily);
+  static const IconData admin3 = IconData(0xe91f, fontFamily: _fontFamily);
+  static const IconData arrow_text = IconData(0xe920, fontFamily: _fontFamily);
+  static const IconData B = IconData(0xe921, fontFamily: _fontFamily);
+  static const IconData B1 = IconData(0xe922, fontFamily: _fontFamily);
+  static const IconData B2 = IconData(0xe923, fontFamily: _fontFamily);
+  static const IconData bolshe_ravno2 = IconData(0xe924, fontFamily: _fontFamily);
+  static const IconData burger_menu = IconData(0xe925, fontFamily: _fontFamily);
+  static const IconData burger_menu1 = IconData(0xe926, fontFamily: _fontFamily);
+  static const IconData burger_menu2 = IconData(0xe927, fontFamily: _fontFamily);
+  static const IconData C = IconData(0xe928, fontFamily: _fontFamily);
+  static const IconData C1 = IconData(0xe929, fontFamily: _fontFamily);
+  static const IconData C2 = IconData(0xe92a, fontFamily: _fontFamily);
+  static const IconData cart_main = IconData(0xe92b, fontFamily: _fontFamily);
+  static const IconData cart_main2 = IconData(0xe92c, fontFamily: _fontFamily);
+  static const IconData catalog = IconData(0xe92d, fontFamily: _fontFamily);
+  static const IconData catalog2 = IconData(0xe92e, fontFamily: _fontFamily);
+  static const IconData close = IconData(0xe92f, fontFamily: _fontFamily);
+  static const IconData close2 = IconData(0xe930, fontFamily: _fontFamily);
+  static const IconData close_burger_menu = IconData(0xe931, fontFamily: _fontFamily);
+  static const IconData color_1 = IconData(0xe932, fontFamily: _fontFamily);
+  static const IconData comments = IconData(0xe935, fontFamily: _fontFamily);
+  static const IconData copy = IconData(0xe936, fontFamily: _fontFamily);
+  static const IconData D = IconData(0xe937, fontFamily: _fontFamily);
+  static const IconData D1 = IconData(0xe938, fontFamily: _fontFamily);
+  static const IconData D2 = IconData(0xe939, fontFamily: _fontFamily);
+  static const IconData delete = IconData(0xe93a, fontFamily: _fontFamily);
+  static const IconData delivery = IconData(0xe93b, fontFamily: _fontFamily);
+  static const IconData delivery_4_hours = IconData(0xe93c, fontFamily: _fontFamily);
+  static const IconData delivery_all_day = IconData(0xe93d, fontFamily: _fontFamily);
+  static const IconData delivery_express = IconData(0xe93e, fontFamily: _fontFamily);
+  static const IconData delivery_in_time = IconData(0xe93f, fontFamily: _fontFamily);
+  static const IconData exit = IconData(0xe940, fontFamily: _fontFamily);
+  static const IconData H = IconData(0xe941, fontFamily: _fontFamily);
+  static const IconData H1 = IconData(0xe942, fontFamily: _fontFamily);
+  static const IconData H2 = IconData(0xe943, fontFamily: _fontFamily);
+  static const IconData home3 = IconData(0xe944, fontFamily: _fontFamily);
+  static const IconData home = IconData(0xe945, fontFamily: _fontFamily);
+  static const IconData home2 = IconData(0xe946, fontFamily: _fontFamily);
+  static const IconData home_fundament = IconData(0xe947, fontFamily: _fontFamily);
+  static const IconData home_roof = IconData(0xe948, fontFamily: _fontFamily);
+  static const IconData info = IconData(0xe949, fontFamily: _fontFamily);
+  static const IconData in_stock = IconData(0xe94a, fontFamily: _fontFamily);
+  static const IconData L = IconData(0xe94b, fontFamily: _fontFamily);
+  static const IconData L1 = IconData(0xe94c, fontFamily: _fontFamily);
+  static const IconData L2 = IconData(0xe94d, fontFamily: _fontFamily);
+  static const IconData L3 = IconData(0xe94e, fontFamily: _fontFamily);
+  static const IconData likvidacia_icon = IconData(0xe94f, fontFamily: _fontFamily);
+  static const IconData location = IconData(0xe950, fontFamily: _fontFamily);
+  static const IconData logo_2017 = IconData(0xe951, fontFamily: _fontFamily);
+  static const IconData logo_2017_smal = IconData(0xe952, fontFamily: _fontFamily);
+  static const IconData logo2023 = IconData(0xe953, fontFamily: _fontFamily);
+  static const IconData menshe_ravno2 = IconData(0xe954, fontFamily: _fontFamily);
+  static const IconData partners = IconData(0xe955, fontFamily: _fontFamily);
+  static const IconData pay_driver = IconData(0xe956, fontFamily: _fontFamily);
+  static const IconData pay_driver_card = IconData(0xe95c, fontFamily: _fontFamily);
+  static const IconData pay_driver_card2 = IconData(0xe95d, fontFamily: _fontFamily);
+  static const IconData pay_driver_card3 = IconData(0xe965, fontFamily: _fontFamily);
+  static const IconData pay_driver_card4 = IconData(0xe966, fontFamily: _fontFamily);
+  static const IconData pay_driver_card5 = IconData(0xe989, fontFamily: _fontFamily);
+  static const IconData pay_driver_cash = IconData(0xe996, fontFamily: _fontFamily);
+  static const IconData pay_driver_cash2 = IconData(0xe997, fontFamily: _fontFamily);
+  static const IconData pay_in_site = IconData(0xe9a4, fontFamily: _fontFamily);
+  static const IconData pay_magazine = IconData(0xe9a5, fontFamily: _fontFamily);
+  static const IconData pay_magazine2 = IconData(0xe9a6, fontFamily: _fontFamily);
+  static const IconData pay_SBP = IconData(0xe9a7, fontFamily: _fontFamily);
+  static const IconData pay_SBP2 = IconData(0xe9a8, fontFamily: _fontFamily);
+  static const IconData plity_derevo = IconData(0xe9a9, fontFamily: _fontFamily);
+  static const IconData questions = IconData(0xe9aa, fontFamily: _fontFamily);
+  static const IconData rub = IconData(0xe9ac, fontFamily: _fontFamily);
+  static const IconData S = IconData(0xe9ad, fontFamily: _fontFamily);
+  static const IconData S_m2 = IconData(0xe9ae, fontFamily: _fontFamily);
+  static const IconData S1 = IconData(0xe9af, fontFamily: _fontFamily);
+  static const IconData S2 = IconData(0xe9b0, fontFamily: _fontFamily);
+  static const IconData sale = IconData(0xe9b1, fontFamily: _fontFamily);
+  static const IconData search = IconData(0xe9b2, fontFamily: _fontFamily);
+  static const IconData settings = IconData(0xe9b3, fontFamily: _fontFamily);
+  static const IconData shop_house = IconData(0xe9b4, fontFamily: _fontFamily);
+  static const IconData shop_house2 = IconData(0xe9b5, fontFamily: _fontFamily);
+  static const IconData shop_house2_01 = IconData(0xe9b6, fontFamily: _fontFamily);
+  static const IconData sravnenie = IconData(0xe9b7, fontFamily: _fontFamily);
+  static const IconData sravnenie21 = IconData(0xe9b8, fontFamily: _fontFamily);
+  static const IconData sravnenie2 = IconData(0xe9b9, fontFamily: _fontFamily);
+  static const IconData sravnenie3_01 = IconData(0xe9ba, fontFamily: _fontFamily);
+  static const IconData sravnenie3_01_01 = IconData(0xe9bb, fontFamily: _fontFamily);
+  static const IconData sravnenie3_01_02_01 = IconData(0xe9bc, fontFamily: _fontFamily);
+  static const IconData ucenca_icon = IconData(0xe9bd, fontFamily: _fontFamily);
+  static const IconData vacansii = IconData(0xe9be, fontFamily: _fontFamily);
+  static const IconData wall = IconData(0xe9bf, fontFamily: _fontFamily);
+  static const IconData wall_icon_01 = IconData(0xe9c0, fontFamily: _fontFamily);
+}
