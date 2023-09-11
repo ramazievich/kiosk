@@ -72,7 +72,23 @@ body {
   align-content: center;
   justify-content: space-between;
   align-items: center;
-  margin: 30px 80px;
+  /*  margin: 30px 80px;*/
+  margin: 2% 6%;
+}
+
+#kiosk_slider-wrp {
+  /*width: 80%;
+  width: 1200px;*/
+  width: 50%;
+ 
+  overflow: hidden;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+#slidy a img {
+  float: left;
+  width: 20%;
 }
 
 /* анимированый фон*/
@@ -199,7 +215,9 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100%;
-  margin-top: 250px;
+  /*margin-top: 250px;*/
+  margin-top: 12%;
+  margin-bottom: 1%;
 }
 
 .kiosk_search .kiosk_search {
