@@ -10,7 +10,8 @@
     <title>Kiosk page</title>
 </head>
 
-<body class="kiosk_bg kiosk_bg-fon">
+<body class="kiosk_bg-fon">
+    <!--Блок для анимированного фона-->
     <ul class="kiosk_bg-fon-circles">
         <li><i class="house"></i></li>
         <li></li>
@@ -26,7 +27,11 @@
     <container class="kiosk_container">
         <div class="kiosk_header">
             <img class="kiosk_header-logo" src="/img/logo.svg" width="150px" alt="Стройудача" />
-            <img class="kiosk_header-cart" src="/img/spisok-pokupok.svg" width="150px" alt="Список покупок" />
+            <!--<img class="kiosk_header-cart" src="/img/spisok-pokupok.svg" width="150px" alt="Список покупок" />-->
+            <div class="kiosk_cart-wrp">
+                <i class="su_icon-shopping-list" alt="Список покупок"></i>
+                <span class="kiosk_cart-name">Список покупок</span>
+            </div>
         </div>
         <div class="kiosk_body">
             <div class="kiosk_search-wrp">
@@ -44,7 +49,7 @@
         </div>
     </container>
 
-    <!--Блок для анимированного фона-->
+    
     
 
     <script src="/main.js"></script>
