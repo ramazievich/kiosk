@@ -64,3 +64,4 @@ document.body.appendChild(css); // add the new stylesheet to the end of the docu
 /**
  * конец слайдер киоск
  */
+

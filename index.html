@@ -2,69 +2,85 @@
 <html lang="ru">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="https://stroyudacha.ru/img/favicon.svg" type="image/x-icon" />
-    <link rel="stylesheet" href="/style.css" />
-    <link rel="stylesheet" href="/su_font-v3.0/style.css" />
-    <title>Kiosk page</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="https://stroyudacha.ru/img/favicon.svg" type="image/x-icon" />
+  <!--клавиатура 1-->
+  <link rel="stylesheet" href="/keyboard/keyboard.css" />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/su_font-v3.0/style.css" />
+
+  <title>Kiosk page</title>
 </head>
 
 <body class="kiosk_bg-fon">
-    <!--Блок для анимированного фона-->
-    <ul class="kiosk_bg-fon-circles">
-        <li><i class="house"></i></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
-    <container class="kiosk_container">
-        <div class="kiosk_header">
-            <img class="kiosk_header-logo" src="/img/logo.svg" width="150px" alt="Стройудача" />
-            <!--<img class="kiosk_header-cart" src="/img/spisok-pokupok.svg" width="150px" alt="Список покупок" />-->
-            <div class="kiosk_cart-wrp">
-                <i class="su_icon-shopping-list" alt="Список покупок"></i>
-                <span class="kiosk_cart-name">Список покупок</span>
-            </div>
-        </div>
-        <div class="kiosk_body">
-            <div class="kiosk_search-wrp">
-                <form class="kiosk_search" onsubmit="event.preventDefault();" role="search">
-                    <label class="kiosk_search-label" for="search">Что ищем?</label>
-                    <input class="kiosk_search-input" id="search" type="search" placeholder="Что ищем?" autofocus required />
-                    <button class="kiosk_search-button" type="submit"><i class="su_icon-search2"></i></button>    
-                  </form>
+  <!--Блок для анимированного фона-->
+  <ul class="kiosk_bg-fon-circles">
+    <li><i class="house"></i></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <container class="kiosk_container">
+    <div class="kiosk_header">
+      <img class="kiosk_header-logo" src="/img/logo.svg" width="115px" alt="Стройудача" />
+      <a class="kiosk_cart-wrp">
+        <i class="su_icon-shopping-list" alt="Список покупок"></i>
+        <span class="kiosk_cart-name">Список товаров</span>
+      </a>
+    </div>
+    <div class="kiosk_body">
+      <div class="kiosk_search-wrp">
+        <form class="kiosk_search" role="search" onSubmit="return false;">
+          <label class="kiosk_search-label" for="search">Что ищем?</label>
+          <input class="kiosk_search-input keyboardInput" type="search" placeholder="Что ищем?" maxLength="100"
+            name="name" id="search" autocomplete="off" autofocus required />
+          <!--<input class="kiosk_search-input" id="keyboard" type="search" placeholder="Что ищем?" name="search" autofocus required />
+          <input class="keyboardInput" type="search" placeholder="Что ищем?" maxLength="100"
+          name="name2" id="search2" autocomplete="off" autofocus required />-->
+          <button class="kiosk_search-button" type="submit"><i class="su_icon-search2"></i></button>
 
-            </div>  
-        </div>
-<div class="kiosk_list-items-wrp">
-<ul class="kiosk_list-items">
-    <li class="kiosk_items"><a class="kiosk_items-link"><i class="su_icon-catalog3"></i><span>Каталог</span></a></li>
-    <li class="kiosk_items"><a class="kiosk_items-link"><i class="su_icon-shop-house2-01"></i><span>Магазины</span></a></li>
-    <li class="kiosk_items"><a class="kiosk_items-link"><i class="su_icon-delivery"></i><span>Доставка</span></a></li>
-    <li class="kiosk_items"><a class="kiosk_items-link"><i class="su_icon-sale"></i><span>Акции</span></a></li>
-</ul>
-</div>
+        </form>
 
-            <div id="kiosk_slider-wrp">
-                <figure id="slidy">
-                 <a href="#"> <img src="https://storage.yandexcloud.net/s.stroyudacha.ru/actions/2023/08/185017/main.gif" width="1200" alt="eyes" ></a>
-                 <a href="#"><img src="https://storage.yandexcloud.net/s.stroyudacha.ru/actions/2023/08/185012/main.gif" width="1200" alt="lou" ></a>
-                 <a href="#"><img src="https://storage.yandexcloud.net/s.stroyudacha.ru/actions/2023/06/182281/himlegion-gruppa.jpg" width="1200" alt="lucie-2" ></a>
-                 <a href="#"><img src="https://storage.yandexcloud.net/s.stroyudacha.ru/actions/2023/08/184464/main.gif" width="1200" alt="lucie" ></a>
-                </figure>
-              </div>
-    </container>
+      </div>
+    </div>
+    <div class="kiosk_list-items-wrp">
+      <ul class="kiosk_list-items">
+        <li class="kiosk_items"><a class="kiosk_items-link"><i class="su_icon-catalog3"></i><span>Каталог</span></a>
+        </li>
+        <li class="kiosk_items"><a class="kiosk_items-link"><i
+              class="su_icon-shop-house2-01"></i><span>Магазины</span></a></li>
+        <li class="kiosk_items"><a class="kiosk_items-link"><i class="su_icon-delivery"></i><span>Доставка</span></a>
+        </li>
+        <li class="kiosk_items"><a class="kiosk_items-link"><i class="su_icon-sale"></i><span>Акции</span></a></li>
+      </ul>
+    </div>
 
-    
-    <script type="text/javascript" src="/main.js"></script>
-    <script type="text/javascript" src="https://stroyudacha.ru/assets/f177700e/jquery.min.js"></script>
+    <div id="kiosk_slider-wrp">
+      <figure id="slidy">
+        <a href="#"> <img src="https://storage.yandexcloud.net/s.stroyudacha.ru/actions/2023/08/185017/main.gif"
+            width="1200" alt="eyes"></a>
+        <a href="#"><img src="https://storage.yandexcloud.net/s.stroyudacha.ru/actions/2023/08/185012/main.gif"
+            width="1200" alt="lou"></a>
+        <a href="#"><img
+            src="https://storage.yandexcloud.net/s.stroyudacha.ru/actions/2023/06/182281/himlegion-gruppa.jpg"
+            width="1200" alt="lucie-2"></a>
+        <a href="#"><img src="https://storage.yandexcloud.net/s.stroyudacha.ru/actions/2023/08/184464/main.gif"
+            width="1200" alt="lucie"></a>
+      </figure>
+    </div>
+  </container>
+  <script type="text/javascript" src="/main.js"></script>
+  <script type="text/javascript" src="https://stroyudacha.ru/assets/f177700e/jquery.min.js"></script>
+  <!--клавиатура 1-->
+  <script type="text/javascript" src="/keyboard/keyboard.js"></script>
+
 </body>
 
 </html>
