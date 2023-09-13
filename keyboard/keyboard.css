@@ -2,10 +2,10 @@
   /* Keyboard */
   
   .kb-container {
-    position: fixed;
+    /*position: fixed;*/
     width: 560px;
     height: 213px;
-    bottom: 12%;
+    bottom: 17%;
     right: 12.5%;
     padding: 5px;
     font-family: "Lato", sans-serif;
@@ -20,17 +20,30 @@
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    align-items: center;
+    justify-content: center;
+    bottom: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    animation: ani 0.7s forwards;
+  }
+
+  @keyframes ani {
+    0% {transform: translateX(-150%);}
+    100% {transform: translateY(0);}
   }
   
   .kb-container .kb-loading {
-    position: absolute;
+   position: absolute;
     left: 0px;
     top: 0px;
     width: 100%;
     height: 100%;
     background: #CCC;
     z-index: 9999;
-  }
+     }
   
   .kb-button {
     cursor: pointer;
@@ -44,13 +57,36 @@
     margin: 1px;
     padding: 0px;
   }
-  
+  /*
   .kb-keyboard {
     display: inline-block;
     position: relative;
     left: 3px;
     top: 3px;
     height: 100%;
+  }
+*/
+
+  .kb-keyboard {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+  .kb-keyboard--wtp {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    
   }
   
   .kb-keyboard .kb-line {
@@ -183,11 +219,18 @@
   .kb-lang-button {
     display: inline-block;
     margin: 5px;
-    cursor: pointer;
+    width: 29px;
+    height: 26px;
+    border-radius: 2px;
+    padding: 2px;
   }
   
   .kb-lang-button:hover {
-    color: #FFF;
+    color: #3a9763;
+    background: #f9f9f9;
+    border-radius: 2px;
+    cursor: pointer;
+
   }
   
   
@@ -204,8 +247,9 @@
     border-radius: 4px;
     box-shadow: 0 0px 4px rgba(0, 0, 0, 0.25);
    /* width: 900px;
-    height: 316px*/
-    width: 75%;
+    height: 316px
+    width: 75%;*/
+    min-width: 900px;
     height: 340px;
   }
   
@@ -225,7 +269,8 @@
   }
   
   .kb-default-key:hover {
-    border-color: #d6d6d6;
+    border-color: #9bcbb0;
+    background: #f9fcfa;
     box-shadow: none;
   }
   
@@ -244,10 +289,20 @@
   
   .kb-default-menubutton {
     color: #666;
+    background: #f9f9f9;
+    width: 29px;
+    height: 26px;
+    border-radius: 2px;
+    padding: 2px;
   }
   
   .kb-default-menubutton:hover {
-    color: #333;
+    color: #3a9763;
+    background: none;
+  }
+
+  .kb-closebtn:hover {
+    color: #ff0000;
   }
   
   .kb-default-langs {
@@ -255,6 +310,7 @@
     border-right: none;
     color: #666;
     box-shadow: -5px 5px 0px rgba(0, 0, 0, 0.05);
+    width: 135px;
   }
   
   .kb-default-show {

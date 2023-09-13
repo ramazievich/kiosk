@@ -5,7 +5,7 @@ var content = false;
 var content_height = 0;
 jQuery(document).ready(function() {
   kb = jQuery('.search').keyboard({
-    language: 'en',
+    language: 'ru',
     startAs: 'hidden',
     debug: 'false'
   });
@@ -56,7 +56,7 @@ jQuery(document).ready(function() {
     var skins = ['blue', 'green', 'red', 'yellow', 'black', 'default'];
     var languages = {
       'ru': ['RU', 'Russian'],
-      'en': ['EN', 'English'],
+      'en': ['EN', 'English']
       /*'fr': ['FR', 'French'],
       'de': ['DE', 'German'],
       'it': ['IT', 'Italian'],
@@ -71,7 +71,7 @@ jQuery(document).ready(function() {
       'kr': ['KR', 'Korean'],
       'jp': ['JP', 'Japanese']*/
     };
-    var currentlng = 'en';
+    var currentlng = 'ru';
     var langbutton = false;
 
     var keys = ['~<>`<>126', '!<>1<>49', '@<>2<>52', '#<>3<>51', '$<>4<>52', '%<>5<>53', '^<>6<>54', '&<>7<>55', '*<>8<>56', '(<>9<>57', ')<>0<>48', '_<>-<>45', '+<>=<>43', 'func<>Backspace<>08', 'br',
@@ -94,7 +94,7 @@ jQuery(document).ready(function() {
     ];
 */
     var lng_keys = {
-      'ru': ['Π<>Ρ<><>', '!<>1<><>', '"<>2<><>', 'β<>3<><>', ';<>4<><>', '%<>5<><>', ':<>6<><>', '?<>7<><>', '*<>8<><>', '(<>9<><>', ')<>0<><>', '_<>-<><>', '+<>=<><>', 'Π<>ΠΉ<><>', 'Π¦<>Ρ<><>', 'Π£<>Ρ<><>', 'Π<>ΠΊ<><>', 'Π<>Π΅<><>', 'Π<>Π½<><>', 'Π<>Π³<><>', 'Π¨<>Ρ<><>', 'Π©<>Ρ<><>', 'Π<>Π·<><>', 'Π₯<>Ρ<><>', 'Πͺ<>Ρ<><>', '/<>\<><>', 'Π€<>Ρ<><>', 'Π«<>Ρ<><>', 'Π<>Π²<><>', 'Π<>Π°<><>', 'Π<>ΠΏ<><>', 'Π <>Ρ<><>', 'Π<>ΠΎ<><>', 'Π<>Π»<><>', 'Π<>Π΄<><>', 'Π<>ΠΆ<><>', 'Π<>Ρ<><>', 'Π―<>Ρ<><>', 'Π§<>Ρ<><>', 'Π‘<>Ρ<><>', 'Π<>ΠΌ<><>', 'Π<>ΠΈ<><>', 'Π’<>Ρ<><>', 'Π¬<>Ρ<><>', 'Π<>Π±<><>', 'Π�<>Ρ<><>', ',<>.<><>'],
+      'ru': ['Ё<>ё<><>', '!<>1<><>', '"<>2<><>', 'β<>3<><>', ';<>4<><>', '%<>5<><>', ':<>6<><>', '?<>7<><>', '*<>8<><>', '(<>9<><>', ')<>0<><>', '_<>-<><>', '+<>=<><>', 'Й<>й<><>', 'Ц<>ц<><>', 'У<>у<><>', 'К<>к<><>', 'Е<>е<><>', 'Н<>н<><>', 'Г<>г<><>', 'Ш<>ш<>', 'Щ<>щ<><>', 'З<>з<><>', 'Х<>х<><>', 'Ъ<>ъ<><>', '/<>\/<><>', 'Ф<>ф<><>', 'Ы<>ы<><>', 'В<>в<><>', 'А<>а<><>', 'П<>п<><>', 'Р<>р<><>', 'О<>о<><>', 'Л<>л<><>', 'Д<>д<><>', 'Ж<>ж<><>', 'Э<>э<><>', 'Я<>я<><>', 'Ч<>ч<><>', 'С<>с<><>', 'М<>м<><>', 'И<>и<><>', 'Т<>т<><>', 'Ь<>ь<><>', 'Б<>б<><>', 'Ю<>ю<><>', ',<>.<><>'],
       'en': ['~<>`<><>', '!<>1<><>', '@<>2<><>', '#<>3<><>', '$<>4<><>', '%<>5<><>', '^<>6<><>', '&<>7<><>', '*<>8<><>', '(<>9<><>', ')<>0<><>', '_<>-<><>', '+<>=<><>', 'Q<>q<><>', 'W<>w<><>', 'E<>e<><>', 'R<>r<><>', 'T<>t<><>', 'Y<>y<><>', 'U<>u<><>', 'I<>i<><>', 'O<>o<><>', 'P<>p<><>', '{<>[<><>', '}<>]<><>', '|<>\\<><>', 'A<>a<><>', 'S<>s<><>', 'D<>d<><>', 'F<>f<><>', 'G<>g<><>', 'H<>h<><>', 'J<>j<><>', 'K<>k<><>', 'L<>l<><>', ':<>;<><>', '"<>\'<><>', 'Z<>z<><>', 'X<>x<><>', 'C<>c<><>', 'V<>v<><>', 'B<>b<><>', 'N<>n<><>', 'M<>m<><>', '<<>,<><>', '><>.<><>', '?<>/<><>'],
       /*'cz': ['`<>;<><>', '!<>+<><>', '@<>Δ<><>', '#<>Ε‘<><>', '$<>Δ<><>', '%<>Ε<><>', '^<>ΕΎ<><>', '&<>Γ½<><>', '*<>Γ‘<><>', '(<>Γ<><>', ')<>Γ©<><>', '_<>-<><>', '+<>=<><>', 'Q<>q<><>', 'W<>w<><>', 'E<>e<>Γ<>Γ©', 'R<>r<>Ε<>Ε', 'T<>t<><>', 'Y<>y<>Γ<>Γ½', 'U<>u<>Γ<>ΓΊ', 'I<>i<>Γ<>Γ', 'O<>o<>Γ<>Γ³', 'P<>p<><>', '{<>[<><>', '}<>]<><>', '|<>\\<><>', 'A<>a<>Γ<>Γ‘', 'S<>s<>Ε<>Ε', 'D<>d<><>', 'F<>f<><>', 'G<>g<><>', 'H<>h<><>', 'J<>j<><>', 'K<>k<><>', 'L<>l<>ΔΉ<>ΔΊ', '"<>Ε―<><>', '!<>Β§<><>', 'Z<>z<>ΕΉ<>ΕΊ', 'X<>x<><>', 'C<>c<>Δ<>Δ', 'V<>v<><>', 'B<>b<><>', 'N<>n<>Ε<>Ε', 'M<>m<><>', '<<>,<><>', '><>.<><>', '?<>/<><>'],
       'fr': ['`<>Ε<><>', '!<>&<><>', '#<>Γ©<><>', '$<>"<><>', '%<>\'<><>', '^<>(<><>', '&<>-<><>', '*<>Γ¨<><>', '@<>_<><>', '(<>Γ§<><>', ')<>Γ <><>', '_<>)<><>', '+<>=<><>', 'A<>a<><>', 'Z<>z<>Γ<>Γ«', 'E<>e<>Γ<>Γͺ', 'R<>r<>Γ<>Γ¨', 'T<>t<>ΕΈ<>ΓΏ', 'Y<>y<>Γ<>ΓΌ', 'U<>u<>Γ<>Γ»', 'I<>i<>Γ<>ΓΉ', 'O<>o<>Γ<>Γ΄', 'P<>p<><>', '{<>[<><>', '}<>]<><>', '|<>\\<><>', 'Q<>q<>Γ<>Γ ', 'S<>s<>Γ<>Γ’', 'D<>d<><>', 'F<>f<><>', 'G<>g<><>', 'H<>h<><>', 'J<>j<>Γ<>Γ�', 'K<>k<>Γ<>Γ―', 'L<>l<><>', 'M<>m<><>', '%<>ΓΉ<><>', 'W<>w<><>', 'X<>x<><>', 'C<>c<><>', 'V<>v<><>', 'B<>b<><>', 'N<>n<><>', '?<>,<><>', ';<>.<><>', '><>:<><>', '<<>!<><>'],
@@ -139,8 +139,8 @@ jQuery(document).ready(function() {
     var setup = function() {
 
       // create the keyboard container 
-      kb.container = $("<div unselectable='on'  class='kb-container' />");
-      $('body').append(kb.container);
+      kb.container = $("<div unselectable='on' id='kb-container-id' class='kb-container' />");
+      $('#kiosk_body-id').append(kb.container);
 
       // give the functionality to the close button to close the keyboard
       if (_keyboard.settings.startAs == 'hidden') kb.closeKeyboard();
@@ -171,6 +171,7 @@ jQuery(document).ready(function() {
      */
     var createKeys = function() {
       kb.keyboard = $("<div unselectable='on' class='kb-keyboard' />");
+      kb.keyboardWrp = $("<div unselectable='on' class='kb-keyboard-wrp' />");
       kb.line1 = $("<div unselectable='on' class='kb-line' />");
       kb.line2 = $("<div unselectable='on' class='kb-line' />");
       kb.line3 = $("<div unselectable='on' class='kb-line' />");
@@ -283,7 +284,7 @@ jQuery(document).ready(function() {
 
       });
 
-      kb.keyboard.append(kb.line1).append(kb.line2).append(kb.line3).append(kb.line4).append(kb.line5);
+      kb.keyboard.append(kb.keyboardWrp.append(kb.line1).append(kb.line2).append(kb.line3).append(kb.line4).append(kb.line5));
       kb.container.append(kb.keyboard).mousedown(function(event) {
         if (event.preventDefault) event.preventDefault()
         else event.returnValue = false;
@@ -354,7 +355,7 @@ jQuery(document).ready(function() {
 
       $('.kb-langs').addClass('kb-' + currentskin + '-langs');
       $('.kb-langs').animate({
-        width: 450
+        width: 135
       }, 500);
       langbutton = true;
     }

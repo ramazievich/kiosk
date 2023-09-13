@@ -268,7 +268,7 @@ li.kiosk_items span {
     justify-content: center;
     min-height: 100%;
     /*margin-top: 250px;*/
-    margin-top: 20%;
+    margin-top: 20%;*/
     margin-bottom: 1%;
 }
 
@@ -349,3 +349,15 @@ form.kiosk_search {
 .kiosk_search-button .su_icon-search2 {
     color: #fff;
 }
+
+
+
+
+header {
+    opacity: 0;
+    animation: ani 2.5s forwards;
+  }
+  @keyframes ani {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
