@@ -66,26 +66,3 @@ document.body.appendChild(css); // add the new stylesheet to the end of the docu
  */
 
 
-// Получите ссылки на поле ввода и кнопку по их id или другим селекторам
-const inputField = document.getElementById('kiosk_search-input'); // Замените 'your-input-id' на фактический id вашего поля ввода
-const button = document.getElementById('kiosk_search-button2'); // Замените 'your-button-id' на фактический id вашей кнопки
-
-// Добавьте слушатель события input для поля ввода
-inputField.addEventListener('input', function() {
-    if (inputField.value.trim() !== '') {
-        // Если поле ввода не пустое, скройте кнопку
-        button.style.display = 'none';
-    } else {
-        // Если поле ввода пустое, покажите кнопку
-        button.style.display = 'block';
-    }
-});
-
-// Добавьте слушатель события blur для поля ввода (когда фокус уходит с поля)
-inputField.addEventListener('blur', function() {
-    if (inputField.value.trim() === '') {
-        // Если поле ввода пустое после потери фокуса, покажите кнопку
-        button.style.display = 'block';
-    }
-});
-
