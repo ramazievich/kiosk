@@ -308,8 +308,8 @@ li.kiosk_items span {
 }
 
 .kiosk_search-button {
-    display: none;
-    /*position: absolute;*/
+   display: none;
+    /* position: absolute;*/
     top: 0;
     right: 0;
     width: var(--btn-width);
@@ -331,6 +331,7 @@ li.kiosk_items span {
     cursor: pointer;
 }
 
+
 form.kiosk_search {
     display: flex;
 }
@@ -348,4 +349,3 @@ form.kiosk_search {
 .kiosk_search-button .su_icon-search2 {
     color: #fff;
 }
-
