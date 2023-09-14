@@ -1,4 +1,7 @@
-// Keyboard https://codepen.io/Jku/pen/bwdZzJ
+
+
+//Keyboard  https://codepen.io/Jku/pen/bwdZzJ
+
 
 var kb;
 var content = false;
@@ -22,7 +25,7 @@ jQuery(document).ready(function () {
         startAs: 'visible', // 'hidden', 'visible'
         useImage: true, // true, false
         skin: 'default', // 'default', 'blue', 'green', 'red', 'yellow', 'black'
-        language: 'ru', //'en','ru','cz','fr','de','gr','hu','is','it','pl','pt','es','tr','gb','cn','jp'
+        language: 'ru', //'en','ru'
 
         //DEV
         debug: false, // true, false
@@ -35,14 +38,14 @@ jQuery(document).ready(function () {
 
         /**
          * ===================================================================================
-         *  VARIABLES
+         *  ПЕРЕМЕННЫЕ
          * ===================================================================================
          */
 
-        // create a namespace to be used throughout the plugin
+        // создаtn пространство имен, которое будет использоваться во всем плагине
         var _keyboard = {};
 
-        // set a reference to our keyboard element
+        // ссылка на наш элемент клавиатуры
         var kb = this;
 
         var ctrlk = false;
@@ -57,19 +60,6 @@ jQuery(document).ready(function () {
         var languages = {
             'ru': ['RU', 'Russian'],
             'en': ['EN', 'English']
-            /*'fr': ['FR', 'French'],
-            'de': ['DE', 'German'],
-            'it': ['IT', 'Italian'],
-            'es': ['ES', 'Spanish'],
-            'gr': ['GR', 'Greek'],
-            'tr': ['TR', 'Turkish'],
-            'hu': ['HU', 'Hungarian'],
-            'is': ['IS', 'Icelandic'],
-            'cz': ['CZ', 'Czech'],
-            'pl': ['PL', 'Polish'],
-            'pt': ['PT', 'Portuguese'],
-            'kr': ['KR', 'Korean'],
-            'jp': ['JP', 'Japanese']*/
         };
         var currentlng = 'ru';
         var langbutton = false;
@@ -80,6 +70,17 @@ jQuery(document).ready(function () {
             'func<>Shift<>14', 'Z<>z<>90', 'X<>x<>88', 'C<>c<>67', 'V<>v<>86', 'B<>b<>66', 'N<>n<>78', 'M<>m<>77', '<<>,<>44', '><>.<>46', '?<>/<>47', 'br',
             'func<> <>32'
         ];
+
+        // Скрытие кнопки Enter
+        // Находим индекс элемента 'func<>Enter<>01'
+       var indexToRemove = keys.indexOf('func<>Enter<>01');
+
+        // Если элемент найден, удаляем его
+        if (indexToRemove !== -1) {
+            keys.splice(indexToRemove, 1);
+       }
+
+
         /*
             var keys_symbols = ['`<>&#161;', '!<>&#162;', '@<>&#8240;', '#<>&#164;', '$<>&#247;', '%<>&#166;', '^<>&#167;', '&<>&#168;', '*<>&#169;', '(<>&#176;', ')<>&#171;', '_<>&#187;', '+<>&#172;',
               '{<>&#175;', '}<>&#177;', '[<>&#170;', ']<>&#186;', '\<>&#185;', '|<>&#178;', 'Ξ<>&#179;', ';<>&#180;', ':<>&#181;', '\'<>&#182;', '"<>&#184;', '<<>&#183;', '><>&#188;',
@@ -96,24 +97,6 @@ jQuery(document).ready(function () {
         var lng_keys = {
             'ru': ['Ё<>ё<><>', '!<>1<><>', '"<>2<><>', '№<>3<><>', ';<>4<><>', '%<>5<><>', ':<>6<><>', '?<>7<><>', '*<>8<><>', '(<>9<><>', ')<>0<><>', '_<>-<><>', '+<>=<><>', 'Й<>й<><>', 'Ц<>ц<><>', 'У<>у<><>', 'К<>к<><>', 'Е<>е<><>', 'Н<>н<><>', 'Г<>г<><>', 'Ш<>ш<>', 'Щ<>щ<><>', 'З<>з<><>', 'Х<>х<><>', 'Ъ<>ъ<><>', '/<>\/<><>', 'Ф<>ф<><>', 'Ы<>ы<><>', 'В<>в<><>', 'А<>а<><>', 'П<>п<><>', 'Р<>р<><>', 'О<>о<><>', 'Л<>л<><>', 'Д<>д<><>', 'Ж<>ж<><>', 'Э<>э<><>', 'Я<>я<><>', 'Ч<>ч<><>', 'С<>с<><>', 'М<>м<><>', 'И<>и<><>', 'Т<>т<><>', 'Ь<>ь<><>', 'Б<>б<><>', 'Ю<>ю<><>', ',<>.<><>'],
             'en': ['~<>`<><>', '!<>1<><>', '@<>2<><>', '#<>3<><>', '$<>4<><>', '%<>5<><>', '^<>6<><>', '&<>7<><>', '*<>8<><>', '(<>9<><>', ')<>0<><>', '_<>-<><>', '+<>=<><>', 'Q<>q<><>', 'W<>w<><>', 'E<>e<><>', 'R<>r<><>', 'T<>t<><>', 'Y<>y<><>', 'U<>u<><>', 'I<>i<><>', 'O<>o<><>', 'P<>p<><>', '{<>[<><>', '}<>]<><>', '|<>\\<><>', 'A<>a<><>', 'S<>s<><>', 'D<>d<><>', 'F<>f<><>', 'G<>g<><>', 'H<>h<><>', 'J<>j<><>', 'K<>k<><>', 'L<>l<><>', ':<>;<><>', '"<>\'<><>', 'Z<>z<><>', 'X<>x<><>', 'C<>c<><>', 'V<>v<><>', 'B<>b<><>', 'N<>n<><>', 'M<>m<><>', '<<>,<><>', '><>.<><>', '?<>/<><>'],
-            /*'cz': ['`<>;<><>', '!<>+<><>', '@<>Δ<><>', '#<>Ε‘<><>', '$<>Δ<><>', '%<>Ε<><>', '^<>ΕΎ<><>', '&<>Γ½<><>', '*<>Γ‘<><>', '(<>Γ<><>', ')<>Γ©<><>', '_<>-<><>', '+<>=<><>', 'Q<>q<><>', 'W<>w<><>', 'E<>e<>Γ<>Γ©', 'R<>r<>Ε<>Ε', 'T<>t<><>', 'Y<>y<>Γ<>Γ½', 'U<>u<>Γ<>ΓΊ', 'I<>i<>Γ<>Γ', 'O<>o<>Γ<>Γ³', 'P<>p<><>', '{<>[<><>', '}<>]<><>', '|<>\\<><>', 'A<>a<>Γ<>Γ‘', 'S<>s<>Ε<>Ε', 'D<>d<><>', 'F<>f<><>', 'G<>g<><>', 'H<>h<><>', 'J<>j<><>', 'K<>k<><>', 'L<>l<>ΔΉ<>ΔΊ', '"<>Ε―<><>', '!<>Β§<><>', 'Z<>z<>ΕΉ<>ΕΊ', 'X<>x<><>', 'C<>c<>Δ<>Δ', 'V<>v<><>', 'B<>b<><>', 'N<>n<>Ε<>Ε', 'M<>m<><>', '<<>,<><>', '><>.<><>', '?<>/<><>'],
-            'fr': ['`<>Ε<><>', '!<>&<><>', '#<>Γ©<><>', '$<>"<><>', '%<>\'<><>', '^<>(<><>', '&<>-<><>', '*<>Γ¨<><>', '@<>_<><>', '(<>Γ§<><>', ')<>Γ <><>', '_<>)<><>', '+<>=<><>', 'A<>a<><>', 'Z<>z<>Γ<>Γ«', 'E<>e<>Γ<>Γͺ', 'R<>r<>Γ<>Γ¨', 'T<>t<>ΕΈ<>ΓΏ', 'Y<>y<>Γ<>ΓΌ', 'U<>u<>Γ<>Γ»', 'I<>i<>Γ<>ΓΉ', 'O<>o<>Γ<>Γ΄', 'P<>p<><>', '{<>[<><>', '}<>]<><>', '|<>\\<><>', 'Q<>q<>Γ<>Γ ', 'S<>s<>Γ<>Γ’', 'D<>d<><>', 'F<>f<><>', 'G<>g<><>', 'H<>h<><>', 'J<>j<>Γ<>Γ�', 'K<>k<>Γ<>Γ―', 'L<>l<><>', 'M<>m<><>', '%<>ΓΉ<><>', 'W<>w<><>', 'X<>x<><>', 'C<>c<><>', 'V<>v<><>', 'B<>b<><>', 'N<>n<><>', '?<>,<><>', ';<>.<><>', '><>:<><>', '<<>!<><>'],
-            'de': ['~<>`<><>', '!<>1<><>', '@<>2<><>', '#<>3<><>', '$<>4<><>', '%<>5<><>', '^<>6<><>', '&<>7<><>', '*<>8<><>', '(<>9<><>', ')<>0<><>', '_<>-<><>', '+<>=<><>', 'Q<>q<><>', 'W<>w<><>', 'E<>e<><>', 'R<>r<><>', 'T<>t<><>', 'Y<>y<><>', 'U<>u<><>', 'I<>i<><>', 'O<>o<><>', 'P<>p<><>', 'Γ<>ΓΌ<>{<>[', 'Γ<>Γ€<>}<>]', '|<>\\<><>', 'A<>a<><>', 'S<>s<><>', 'D<>d<><>', 'F<>f<><>', 'G<>g<><>', 'H<>h<><>', 'J<>j<><>', 'K<>k<><>', 'L<>l<><>', ':<>;<><>', 'Γ<>ΓΆ<>"<>\'', 'Z<>z<><>', 'X<>x<><>', 'C<>c<><>', 'V<>v<><>', 'B<>b<><>', 'N<>n<><>', 'M<>m<><>ΞΌ', '<<>,<><>', '><>.<><>', '?<>Γ<>Sch<>sch'],
-            'gr': ['~<>`<><>', '!<>1<><>', '@<>2<><>', '#<>3<><>', '$<>4<><>', '%<>5<><>', '^<>6<><>', '&<>7<><>', '*<>8<><>', '(<>9<><>', ')<>0<><>', '_<>-<><>', '+<>=<><>', ':<>;<><>', 'Ξ<>Ο<><>', 'Ξ<>Ξ΅<>Ξ<>Ξ', 'Ξ‘<>Ο<><>', 'Ξ€<>Ο<>Ξ«<>Ο', 'Ξ₯<>Ο<>Ξ<>Ο', 'Ξ<>ΞΈ<>Ξͺ<>Ο', 'Ξ<>ΞΉ<>Ξ<>Ξ―', 'Ξ<>ΞΏ<>Ξ<>Ο', 'Ξ <>Ο<><>', '{<>[<><>', '}<>]<><>', '|<>\\<><>', 'Ξ<>Ξ±<>Ξ<>Ξ¬', 'Ξ£<>Ο<><>', 'Ξ<>Ξ΄<><>', 'Ξ¦<>Ο<><>', 'Ξ<>Ξ³<><>', 'Ξ<>Ξ·<>Ξ<>Ξ�', 'Ξ<>ΞΎ<><>', 'K<>ΞΊ<><>', 'Ξ<>Ξ»<><>', 'Β¨<>Ξ<><>', '"<>\'<><>', 'Ξ<>ΞΆ<><>', 'X<>Ο<><>', 'Ξ¨<>Ο<><>', 'Ξ©<>Ο<>Ξ<>Ο', 'B<>Ξ²<><>', 'N<>Ξ½<><>', 'M<>ΞΌ<><>', '<<>,<><>', '><>.<><>', '?<>/'],
-            'hu': ['~<>1<><>', '@<>2<><>', '#<>3<><>', '$<>4<><>', '%<>5<><>', '^<>6<><>', '&<>7<><>', '*<>8<><>', '(<>9<><>', 'Ε°<>Ε±<><>0', 'Γ<>ΓΆ<><>', 'Γ<>ΓΌ<><>', 'Γ<>Γ³<><>', 'Q<>q<><>', 'W<>w<><>', 'E<>e<>Δ<>Δ', 'R<>r<>Ε<>Ε', 'T<>t<>Ε€<>Ε₯', 'Z<>z<>Ε½<>ΕΎ', 'U<>u<><>', 'I<>i<><>', 'O<>o<><>', 'P<>p<><>', '{<>[<><>', '}<>]<><>', '|<>\\<><>', 'A<>a<><>', 'S<>s<>Ε <>Ε‘', 'D<>d<>Δ<>Δ', 'F<>f<><>', 'G<>g<><>Γ€', 'H<>h<><>Γ', 'J<>j<><>', 'K<>k<><>', 'L<>l<><>', 'Γ<>Γ©<><>', 'Γ<>Γ‘<><>', 'Y<>y<><>', 'X<>x<><>Γ', 'C<>c<>Δ<>Δ', 'V<>v<><>Δ', 'B<>b<><>Δ', 'N<>n<>Ε<>Ε', 'M<>m<><>Γ', '<<>,<><>Γ', '><>.<><>Ε', '?<>/<><>Ε'],
-            'is': ['~<>`<><>', '!<>1<><>', '@<>2<><>', '#<>3<><>', '$<>4<><>', '%<>5<><>', '^<>6<><>', '&<>7<><>{', '*<>8<><>[', '(<>9<><>]', ')<>0<><>}', 'Γ<>ΓΆ<><>', '+<>=<><>', 'Q<>q<><>', 'W<>w<><>', 'E<>e<><>', 'R<>r<><>', 'T<>t<><>', 'Y<>y<><>', 'U<>u<><>', 'I<>i<><>', 'O<>o<><>', 'P<>p<><>', 'Γ<>Γ°<><>', '?<>\'<><>', '|<>\\<><>', 'A<>a<>Γ<>Γ₯', 'S<>s<><>', 'D<>d<><>', 'F<>f<><>', 'G<>g<><>', 'H<>h<><>', 'J<>j<><>', 'K<>k<><>', 'L<>l<><>', 'Γ<>Γ¦<><>', '"<>\'<><>', 'Z<>z<><>', 'X<>x<><>', 'C<>c<><>', 'V<>v<><>', 'B<>b<><>', 'N<>n<><>', 'M<>m<><>Β΅', '<<>,<><>', '><>.<><>', 'Γ<>ΓΎ<><>'],
-            'it': ['~<>`<><>', '!<>1<><>', '@<>2<><>', '#<>3<><>', '$<>4<><>', '%<>5<><>', '^<>6<><>', '&<>7<><>', '*<>8<><>', '(<>9<><>', ')<>0<><>', 'Γ<>Γ¬<><>', 'Γ<>ΓΉ<><>', 'Q<>q<><>', 'W<>w<><>', 'E<>e<><>', 'R<>r<><>', 'T<>t<><>', 'Y<>y<><>', 'U<>u<><>', 'I<>i<><>', 'O<>o<><>', 'P<>p<><>', 'Γ©<>Γ¨<><>', '}<>]<><>', '|<>\\<><>', 'A<>a<><>', 'S<>s<><>', 'D<>d<><>', 'F<>f<><>', 'G<>g<><>', 'H<>h<><>', 'J<>j<><>', 'K<>k<><>', 'L<>l<><>', 'Γ§<>Γ²<><>', 'Γ<>Γ <><>', 'Z<>z<><>', 'X<>x<><>', 'C<>c<><>', 'V<>v<><>', 'B<>b<><>', 'N<>n<><>', 'M<>m<><>', ';<>,<><>', ':<>.<><>', 'Γ<>ΓΎ<><>'],
-            'pl': ['~<>.<><>Δ', '!<>1<><>Δ', '"<>2<><>Β§', '#<>3<><>Γ', 'Β€<>4<><>Γ·', '%<>5<><>Γ', '&<>6<><>', '/<>7<><>', '(<>8<><>', ')<>9<><>', '=<>0<><>', '?<>+<><>', '*<>\'<><>', 'Q<>q<><>', 'W<>w<><>', 'E<>e<>Δ<>Δ', 'R<>r<>Ε<>Ε', 'T<>t<>Ε€<>Ε₯', 'Z<>z<>Ε½<>ΕΎ', 'U<>u<>Ε�<>Ε―', 'I<>i<>Δ<>Δ', 'O<>o<><>ΕΌ', 'P<>p<><>', '<>ΕΌ<>Γ<>Γ’', '<>Ε<>Γ<>Γ�', '<>Γ³<>Γ<>Γ΄', 'A<>a<>Δ<>Δ', 'S<>s<>Ε <>Ε‘', 'D<>d<>Δ<>Δ', 'F<>f<><>', 'G<>g<><>', 'H<>h<><>', 'J<>j<><>', 'K<>k<><>', 'L<>l<><>', 'Ε<>Ε<><>', 'Δ<>Δ<><>', 'Y<>y<><>', 'X<>x<><>', 'C<>c<>Δ<>Δ', 'V<>v<><>', 'B<>b<><>', 'N<>n<>Ε<>Ε', 'M<>m<><>', '<<>,<><>', '><>.<><>', '?<>/<><>'],
-            'pt': ['|<>\<><>', '!<>1<><>', '"<>2<><>', '#<>3<><>', '$<>4<><>', '%<>5<><>', '&<>6<><>', '/<>7<><>', '(<>8<><>', ')<>9<><>', '=<>0<><>', '\'<>?<><>', 'Β»<>Β«<><>', 'Q<>q<><>', 'W<>w<>Γ<>Γ©', 'E<>e<>Γ<>Γ¨', 'R<>r<>Γ<>Γͺ', 'T<>t<><>', 'Y<>y<>Γ<>Γ½', 'U<>u<>Γ<>ΓΊ', 'I<>i<>Γ<>Γ�', 'O<>o<>Γ<>Γ΅', 'P<>p<>Γ<>Γ³', '<>+<>Γ<>Γ²', '<>\'<>Γ<>Γ΄', '<>~<><>', 'A<>a<>Γ<>Γ£', 'S<>s<>Γ<>Γ‘', 'D<>d<>Γ<>Γ’', 'F<>f<>Γ<>Γ ', 'G<>g<><>', 'H<>h<>Γ<>Γ»', 'J<>j<>Γ<>ΓΉ', 'K<>k<>Γ<>Γ¬', 'L<>l<>Γ<>Γ', 'Γ<>Γ§<><>', 'Βͺ<>ΒΊ<><>', 'Z<>z<><>', 'X<>x<><>', 'C<>c<><>', 'V<>v<><>', 'B<>b<><>', 'N<>n<>Γ<>Γ±', 'M<>m<><>', ';<>,<><>', ':<>.<><>', '_<>-<><>'],
-            'es': ['Βͺ<>ΒΊ<><>', '!<>1<><>', '"<>2<><>', 'Β·<>3<><>', '$<>4<><>', '%<>5<><>', '&<>6<><>', '/<>7<><>', '(<>8<><>', ')<>9<><>', '=<>0<><>', '\'<>?<><>', 'ΒΏ<>Β‘<><>', 'Q<>q<>Γ<>Γ©', 'W<>w<>Γ<>Γ«', 'E<>e<>Γ<>Γ¨', 'R<>r<><>', 'T<>t<><>ΓΏ', 'Y<>y<>Γ<>Γ½', 'U<>u<>Γ<>ΓΊ', 'I<>i<>Γ<>Γ', 'O<>o<>Γ<>Γ³', 'P<>p<>Γ<>Γ²', '^<>`<>Γ<>ΓΆ', '*<>+<><>', 'Γ<>Γ§<><>', 'A<>a<>Γ<>Γ ', 'S<>s<>Γ<>Γ‘', 'D<>d<>Γ<>Γ€', 'F<>f<><>', 'G<>g<><>', 'H<>h<>Γ<>ΓΌ', 'J<>j<>Γ<>ΓΉ', 'K<>k<>Γ<>Γ―', 'L<>l<>Γ<>Γ¬', 'Γ<>Γ±<><>', '"<>\'<><>', 'Z<>z<><>', 'X<>x<><>', 'C<>c<><>', 'V<>v<><>', 'B<>b<><>', 'N<>n<><>', 'M<>m<><>', ';<>,<><>', ':<>.<><>', '_<>-<><>'],
-            'tr': ['"<>Γ©<><>', '!<>1<><>', '\'<>2<><>', '^<>3<><>', '+<>4<><>', '%<>5<><>', '&<>6<><>', '/<>7<><>', '(<>8<><>', ')<>9<><>', '=<>0<><>', '?<>*<><>', '-<>_<><>', 'Q<>q<><>', 'W<>w<><>', 'E<>e<>Γ<>Γͺ', 'R<>r<><>', 'T<>t<><>', 'Y<>y<><>', 'U<>u<>Γ<>Γ»', 'I<>i<>Γ<>Γ�', 'O<>o<>Γ<>Γ΄', 'P<>p<><>', 'Δ<>Δ<><>', 'Γ<>ΓΌ<><>', ';<>,<><>', 'A<>a<>Γ<>Γ’', 'S<>s<><>', 'D<>d<><>', 'F<>f<><>', 'G<>g<><>', 'H<>h<><>', 'J<>j<><>', 'K<>k<><>', 'L<>l<><>', 'Ε<>Ε<><>', 'Δ°<>i<>Γ<>Γ�', 'Z<>z<><>', 'X<>x<><>', 'C<>c<><>', 'V<>v<><>', 'B<>b<><>', 'N<>n<><>', 'M<>m<><>', 'Γ<>ΓΆ<><>', 'Γ<>Γ§<><>', ':<>.<><>'],
-            'kr': ['~<>`<>μ<>μΌ', '!<>1<>μ<>μ', '@<>2<>μ¨<>μ§', '#<>3<>μ·<>μ€', '$<>4<>μ<>μ§', '%<>5<>μ<>μ', '^<>6<>μΈ<>μ', '&<>7<>μ<>μ', '*<>8<>μ<>μ', '(<>9<>μ<>μ ', ')<>0<>μ°<>μ―', '_<>-<>μΏ<>μ¬', '+<>=<>μ<>μ', 'γ<>γ<>μ°<>μ―', 'γ<>γ<>μ<>μ', 'γΈ<>γ·<>μ<>μ', 'γ²<>γ±<>μ¬<>μ«', '<>γ<>μ·<>μ€', '<>γ<><>μΈ', '<>γ<><>', '<>γ<><>', 'γ<>γ<><>', 'γ<>γ<><>', '{<>[<>ν<>ν¨', '}<>]<>ν<>ν', '|<>\\<>ν«<>ν', '<>γ<>ν<>ν΄', '<>γ΄<>νΏ<>ν€', '<>γ<>ν<>νΈ', '<>γΉ<>ν£<>ν', '<>γ<>ν³<>ν', '<>γ<>ν£<>ν', '<>γ<>ν<>ν΄', '<>γ<>ν<>ν', '<>γ£<>ν«<>ν', ':<>;<>νΆ<>ν', '"<>\'<>ν<>ν΄', '<>γ<>ν<>ν', '<>γ<>ν<>ν¨', '<>γ<>ν²<>ν', '<>γ<>ν<>ν¬', '<>γ <>ν<>νΌ', '<>γ<>ν¦<>ν', '<>γ‘<>ν<>νΌ', '<<>,<>ν<>ν¨', '><>.<>ν<>νΈ', '?<>/<>ν<>ν'],
-            'jp': ['γ<>γ<><>γ', 'γ<>γ¬<><>γ', 'γ<>γ΅<><>γ', 'γ’<>γ<><>γ', 'γ¦<>γ<><>γ', 'γ¨<>γ<><>γ', 'γͺ<>γ<><>γ', 'γ€<>γ<><>γ', 'γ¦<>γ<><>γΌ', 'γ¨<>γ<><>Β₯', 'γ―<>γ<><>γ', 'γ<>γ»<><>γ', 'γ<>γΈ<><>γ',
-              'γΏ<>γ<><>γ£', 'γ<>γ¦<><>γ', 'γ€<>γ<><>γ', 'γΉ<>γ<><>γ', 'γ«<>γ<><>γ', 'γ³<>γ<><>γ£', 'γ<>γͺ<><>γ', 'γ<>γ«<><>γ', 'γ©<>γ<><>γ', 'γ»<>γ<><>γ', 'γ<>γ<><>γ', 'γ<>γ<>γ<>γ»', 'γ <>γ<>γ<>γ',
-              'γ<>γ‘<><>', 'γ<>γ¨<><>', 'γ·<>γ<><>', 'γ<>γ―<><>', 'γ<>γ<>γ<>γ ', 'γ―<>γ<>γ<>γ§', 'γ<>γΎ<>γΊ<>γ', 'γ<>γ�<>γ¬<>γ', 'γͺ<>γ<>γΌ<>γ', 'γ¬<>γ<>γ<>γ’', 'γ±<>γ<>γ<>γ©',
-              'γ<>γ€<>γΈ<>γ', 'γ΅<>γ<>γ<>γ°', 'γ½<>γ<>γ�<>γ', 'γ<>γ²<>γ°<>γ', 'γ³<>γ<>γ²<>γ', 'γ<>γΏ<>γ<>γ₯', 'γ’<>γ<>γΆ<>γ', 'γ<>γ<>γΎ<>γ', 'γ«<>γ<>γ<>γ³', 'γ‘<>γ<>γ΄<>γ'
-            
-          ],*/
         };
 
         /**
@@ -123,10 +106,10 @@ jQuery(document).ready(function () {
          */
 
         /**
-         * Initializes namespace settings to be used throughout plugin
+         * Инициализирует настройки пространства имен, которые будут использоваться во всем плагине.
          */
         var init = function () {
-            // merge user-supplied options with the defaults
+            // объединяет параметры, предоставленные пользователем, со значениями по умолчанию
             kb.setSettings(options);
 
             setup();
@@ -134,31 +117,31 @@ jQuery(document).ready(function () {
         }
 
         /**
-         * Performs all DOM and CSS modifications
+         * Выполняет все модификации DOM и CSS.
          */
         var setup = function () {
 
-            // create the keyboard container 
+            // создает контейнер клавиатуры
             kb.container = $("<div unselectable='on' id='kb-container-id' class='kb-container' />");
             $('#kiosk_body-id').append(kb.container);
 
-            // give the functionality to the close button to close the keyboard
+            // добавляет функцию кнопки закрытия, чтобы закрыть клавиатуру
             if (_keyboard.settings.startAs == 'hidden') kb.closeKeyboard();
 
-            // create keyboards rows and buttons
+            // создает строки и кнопки клавиатуры
             createKeys();
 
-            // create the menu bar
+            // создает строку menu bar
             createMenuBar();
 
-            // check if the given language is correct and load it
+            // проверяет, правильный ли указанный язык, и загружает его
             $.each(languages, function (index, item) {
                 if (_keyboard.settings.language == index) {
                     kb.changeLanguage(index);
                 }
             })
 
-            // give the keyboard the ability to be draged and droped
+            // дает клавиатуре возможность перетаскивания
             drag('.kb-container');
 
             aplyLayout(_keyboard.settings.skin);
@@ -167,7 +150,7 @@ jQuery(document).ready(function () {
         }
 
         /**
-         * Creates keyboard keys and their functions
+         * Создает клавиши клавиатуры и их функции.
          */
         var createKeys = function () {
             kb.keyboard = $("<div unselectable='on' class='kb-keyboard' />");
@@ -292,7 +275,7 @@ jQuery(document).ready(function () {
         }
 
         /**
-         * Shows symbols on keyboard
+         * Показывает символы на клавиатуре
          */
         var showSymbols = function () {
             $('.kb-letter').each(function (index, item) {
@@ -307,7 +290,7 @@ jQuery(document).ready(function () {
         }
 
         /**
-         * Hide symbols from keyboard and restore the selected language
+         * Скрывает символы с клавиатуры и восстанавливает выбранный язык
          */
         var hideSymbols = function () {
             kb.changeLanguage(currentlng);
@@ -316,7 +299,7 @@ jQuery(document).ready(function () {
         }
 
         /**
-         * Shows Mathematic symbols on keyboard
+         * Показывает математические символы на клавиатуре
          */
         var showMathSymbols = function () {
             $('.kb-letter').each(function (index, item) {
@@ -331,7 +314,7 @@ jQuery(document).ready(function () {
         }
 
         /**
-         * Hide Mathematic symbols from keyboard and restore the selected language
+         * Скрывает математические символы с клавиатуры и восстанавливает выбранный язык
          */
         var hideMathSymbols = function () {
             kb.changeLanguage(currentlng);
@@ -340,7 +323,7 @@ jQuery(document).ready(function () {
         }
 
         /**
-         * Show languages in the menu bar
+         * Показать языки в menu bar
          */
         var showLanguages = function () {
             kb.langscontainer = $('<div class="kb-langs"></div>').appendTo(kb.container);
@@ -361,7 +344,7 @@ jQuery(document).ready(function () {
         }
 
         /**
-         * Hide languages from the menu bar
+         * Скрывает языки из menu bar
          */
         var hideLanguages = function () {
             $('.kb-langs').animate({
@@ -373,7 +356,7 @@ jQuery(document).ready(function () {
         }
 
         /**
-         * Get the selected text if there is any
+         * Получает selected text, если он есть
          * @return selected text
          */
         var getSelected = function () {
@@ -390,7 +373,7 @@ jQuery(document).ready(function () {
         }
 
         /**
-         * Change all element classes with the given skin color
+         * Изменчет все классы элементов с заданным skin color
          * @param skin, the layouts color
          */
         var aplyLayout = function (skin) {
@@ -414,7 +397,7 @@ jQuery(document).ready(function () {
         }
 
         /**
-         * Get the cursors position in the focused input
+         * Получает положение курсоров в сфокусированном input
          * @return pos, the cursors position 
          */
         var getCursorPos = function (element) {
@@ -436,7 +419,7 @@ jQuery(document).ready(function () {
         }
 
         /**
-         * Set the cursors position in the focused input to a given position
+         * Устанавливает cursors position при целенаправленном input в заданную позицию
          * @param pos, the cursors position 
          */
         var setCursorPos = function (pos) {
@@ -454,7 +437,7 @@ jQuery(document).ready(function () {
         }
 
         /**
-         * Create the menu bar and add it to keyboard container
+         * Создает menu bar и добавляет его в контейнер клавиатуры
          */
         var createMenuBar = function () {
             kb.menubar = $("<div class='kb-menubar' />");
@@ -489,7 +472,7 @@ jQuery(document).ready(function () {
         }
 
         /**
-         * Return the character of an Ampersand Character Code
+         * Возвращает символ Ampersand Character Code
          * $param str, the Ampersand Character Code
          */
         var decodeToLetter = function (str) {
@@ -497,7 +480,7 @@ jQuery(document).ready(function () {
         }
 
         /**
-         * Change the state of the letters to upper case
+         * Изменяет состояние букв на верхний регистр
          */
         var capitalize = function () {
             $('.kb-show').addClass('kb-temp');
@@ -509,7 +492,7 @@ jQuery(document).ready(function () {
         }
 
         /**
-         * Change the state of the letters to lower case
+         * Изменяет состояние букв на нижний регистр
          */
         var deCapitalize = function () {
             $('.kb-hide').addClass('kb-temp');
@@ -521,7 +504,7 @@ jQuery(document).ready(function () {
         }
 
         /**
-         * The functionality of the Caps Lock key
+         * Функционал для клавиши Caps Lock
          */
         var capsLockKey = function () {
             if (capslockk) {
@@ -541,7 +524,7 @@ jQuery(document).ready(function () {
         }
 
         /**
-         * The functionality of the Shift key
+         * Функционал для клавиши Shift
          */
         var shiftKey = function () {
             if (shiftk) {
@@ -560,7 +543,7 @@ jQuery(document).ready(function () {
         }
 
         /**
-         * Enable or disable Special chars pressing the Ctrl button
+         * Включите или отключите специальные символы, нажав кнопку Ctrl
          */
         var specialCharacters = function () {
             if (specialchar) {
@@ -580,7 +563,7 @@ jQuery(document).ready(function () {
         }
 
         /**
-         * Give the plugin the ability to drag and drop
+         * Предоставьте плагину возможность перетаскивания
          * @param element, the element to drag
          */
         var drag = function (element) {
@@ -613,14 +596,14 @@ jQuery(document).ready(function () {
         }
 
         /**
-         * Shows console.log info 
+         * Показывает console.log info 
          * @param label
          * @param msg
          */
         var deBug = function (label, msg) {
             if (_keyboard.settings.debug) {
                 if (typeof console == "undefined") {
-                    alert("Your browser does not support console debugging or you need to activate debugging mode. (F12 if ie)");
+                    alert("Ваш браузер не поддерживает консольную отладку или вам необходимо активировать режим отладки. (F12 if ie)");
                     _keyboard.settings.debug = false;
                 } else {
                     console.log(label);
@@ -639,20 +622,20 @@ jQuery(document).ready(function () {
          * ===================================================================================
          */
         /**
-         * Returns all setting's options
+         * Возвращает все параметры настройки
          */
         kb.getSettings = function () {
             return _keyboard.settings;
         }
 
         /**
-         * Marge optional settings with the defaults
+         * Объединяет дополнительные настройки со значениями по умолчанию.
          */
         kb.setSettings = function (settings) {
             _keyboard.settings = $.extend({}, defaults, settings);
         }
         /**
-         * Change the shown language
+         * Изменяет отображаемый язык
          * @param lng, the given language to show  
          */
         kb.changeLanguage = function (lng) {
@@ -674,7 +657,7 @@ jQuery(document).ready(function () {
         }
 
         /**
-         * Remove the current layout and apply the given one
+         * Удалить текущий layout и применить данный
          * @param color, the layouts color
          */
         kb.changeSkin = function (color) {
@@ -692,30 +675,30 @@ jQuery(document).ready(function () {
         }
 
         /**
-         * Open keyboard
+         * Открывает клавиатуру
          * 
          * 
          */
-        $(document).ready(function() {
-            $('.kiosk_search-input').focus(function() {
+        $(document).ready(function () {
+            $('.kiosk_search-input').focus(function () {
                 // При фокусе на поле ввода, показать блок
                 kb.container.show();
             });
-        
-            $('.kiosk_search-input').blur(function() {
+
+            $('.kiosk_search-input').blur(function () {
                 // При потере фокуса на поле ввода, скрыть блок
                 kb.container.hide();
             });
         });
 
-   
-        kb.openKeyboard = function () {        
+
+        kb.openKeyboard = function () {
             kb.container.toggle();
-           $('.kiosk_search-input').focus();
+            $('.kiosk_search-input').focus();
         }
-        
+
         /**
-         * Close keyboard
+         * Закрывает клавиатуру
          */
 
         kb.closeKeyboard = function () {
@@ -723,12 +706,12 @@ jQuery(document).ready(function () {
             $('.kiosk_search-input').blur();
         }
 
-     
 
-        // initialize plugin
+
+        // инициализация плагина
         init();
 
-        // returns the current jQuery object
+        // возвращает текущий объект jQuery
         return this;
     }
 

@@ -27,7 +27,7 @@ button:hover {
 /*Скроллбар*/
 /* Стилизация самого скроллбара */
 ::-webkit-scrollbar {
-    width: 8px; /* Ширина скроллбара */
+    width: 10px; /* Ширина скроллбара */
     background-color: var(--color-brand);
 }
 
