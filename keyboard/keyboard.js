@@ -458,22 +458,22 @@ jQuery(document).ready(function () {
          */
         var createMenuBar = function () {
             kb.menubar = $("<div class='kb-menubar' />");
-            kb.closebutton = $("<div class='kb-menubutton kb-closebtn' title='Close'>&#10006;</div>")
+            kb.closebutton = $("<div class='kb-menubutton kb-closebtn' title='Закрыть'>&#10006;</div>")
                 .click(function () {
                     $('.kb-menubar').trigger('mouseup');
                     kb.closeKeyboard();
                 });
-            kb.selectlanguage = $("<div class='kb-menubutton kb-selectlanguage' title='Select Language'>" + languages[currentlng][0] + "</div>")
+            kb.selectlanguage = $("<div class='kb-menubutton kb-selectlanguage' title='Выберите язык'>" + languages[currentlng][0] + "</div>")
                 .click(function () {
                     if (!langbutton) showLanguages();
                     else hideLanguages();
                 });
-            /* kb.selectsymbols = $("<div class='kb-menubutton kb-selectsymbols' title='Symbols'>&#167;</div>")
+            /* kb.selectsymbols = $("<div class='kb-menubutton kb-selectsymbols' title='Символы'>&#167;</div>")
               .click(function() {
                 if (symbolkeydown) hideSymbols();
                 else showSymbols();
               });
-           kb.selectmath = $("<div class='kb-menubutton kb-selectmath' title='Mathematical Symbols'>123</div>")
+           kb.selectmath = $("<div class='kb-menubutton kb-selectmath' title='Математические символы'>123</div>")
               .click(function() {
                 if (mathkeydown) hideMathSymbols();
                 else showMathSymbols();
