@@ -1,8 +1,7 @@
-  
   /* Keyboard */
-  
+
   .kb-container {
-    /*position: fixed;*/
+    position: absolute;
     width: 560px;
     height: 213px;
     bottom: 17%;
@@ -31,25 +30,30 @@
   }
 
   @keyframes ani {
-    0% {transform: translateX(-150%);}
-    100% {transform: translateY(0);}
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
   }
-  
+
   .kb-container .kb-loading {
-   position: absolute;
+    position: absolute;
     left: 0px;
     top: 0px;
     width: 100%;
     height: 100%;
     background: #CCC;
     z-index: 9999;
-     }
-  
+  }
+
   .kb-button {
     cursor: pointer;
     margin: 0px;
   }
-  
+
   .kb-button-key td {
     width: 4px;
     height: 3px;
@@ -57,15 +61,6 @@
     margin: 1px;
     padding: 0px;
   }
-  /*
-  .kb-keyboard {
-    display: inline-block;
-    position: relative;
-    left: 3px;
-    top: 3px;
-    height: 100%;
-  }
-*/
 
   .kb-keyboard {
     position: relative;
@@ -75,9 +70,7 @@
     align-content: space-around;
     justify-content: center;
     align-items: center;
-}
-
-
+  }
 
   .kb-keyboard--wtp {
     display: flex;
@@ -86,15 +79,14 @@
     align-content: center;
     align-items: center;
     justify-content: center;
-    
   }
-  
+
   .kb-keyboard .kb-line {
     width: 100%;
     height: 20%;
     position: relative;
   }
-  
+
   .kb-key {
     cursor: default;
     display: inline-block;
@@ -105,7 +97,7 @@
     zoom: 1;
     font-size: 14px;
   }
-  
+
   .kb-key:before {
     content: "";
     width: 100%;
@@ -117,11 +109,11 @@
     -moz-border-radius: 4px;
     border-radius: 4px;
   }
-  
+
   .kb-key .kb-show {
     display: block;
   }
-  
+
   .kb-key .kb-hide {
     display: none;
     position: absolute;
@@ -130,7 +122,7 @@
     left: -10px;
     text-shadow: none;
   }
-  
+
   .kb-key .kb-upper,
   .kb-key .kb-lower {
     position: absolute;
@@ -139,7 +131,7 @@
     width: 100%;
     height: 100%;
   }
-  
+
   .kb-key .kb-itemkey {
     position: absolute;
     text-align: center;
@@ -147,48 +139,45 @@
     width: 100%;
     height: 100%;
   }
-  
+
   .kb-letter {
     width: 55px;
     height: 55px;
     position: relative;
   }
-  
+
   .kb-fkey {
     width: 90px;
     height: 55px;
     position: relative;
     font-size: 12px;
   }
-  
+
   #key14,
   #key15 {
     width: 80px;
   }
 
-
-  
   #key00 {
     width: 63px;
   }
-  
+
   #key32 {
     width: 565px;
     position: relative;
     left: 0;
-    margin-left: 140px;
   }
-  
+
   #key0001 {
     width: 60px;
     float: left;
   }
-  
+
   #key0002 {
     width: 60px;
     float: right;
   }
-  
+
   .kb-menubar {
     position: absolute;
     right: 0px;
@@ -196,7 +185,7 @@
     width: 55px;
     height: 100%;
   }
-  
+
   .kb-menubutton {
     width: 40%;
     margin: 10px;
@@ -204,7 +193,7 @@
     vertical-align: middle;
     cursor: pointer;
   }
-  
+
   .kb-langs {
     position: absolute;
     top: 33px;
@@ -215,7 +204,7 @@
     overflow: hidden;
     width: 110px;
   }
-  
+
   .kb-lang-button {
     display: inline-block;
     margin: 5px;
@@ -224,21 +213,18 @@
     border-radius: 2px;
     padding: 2px;
   }
-  
+
   .kb-lang-button:hover {
     color: #3a9763;
     background: #f9f9f9;
     border-radius: 2px;
     cursor: pointer;
-
   }
-  
-  
-  /* ------------------------------====================== SKINS ======================----------------------------------- */
-  
-  
+
+  /* ------------------------------====================== темы ======================----------------------------------- */
+
   /* Default =============================================================================================================*/
-  
+
   .kb-default-container {
     background: #fff;
     background-color: rgba(255, 255, 255, 0.98);
@@ -246,19 +232,23 @@
     border: 0 solid rgba(0, 0, 0, 0.25);
     border-radius: 4px;
     box-shadow: 0 0px 4px rgba(0, 0, 0, 0.25);
-   /* width: 900px;
-    height: 316px
-    width: 75%;*/
     min-width: 900px;
     height: 340px;
+    position: absolute;
+    top: 84px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
   }
-  
+
   .kb-default-button {
     background: #d1d1d1;
     color: #000;
     border: 1px solid #333;
   }
-  
+
   .kb-default-key {
     background: rgb(255, 255, 255);
     border: 1px solid #f1f1f1;
@@ -267,26 +257,26 @@
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
   }
-  
+
   .kb-default-key:hover {
     border-color: #9bcbb0;
     background: #f9fcfa;
     box-shadow: none;
   }
-  
+
   .kb-default-key:visited,
   .kb-default-key:focus {
     outline: -webkit-focus-ring-color auto 5px;
   }
-  
+
   .kb-default-key:active {
     background-color: hsl(0, 0%, 95%);
   }
-  
+
   .kb-default-menubar {
     border-left: 2px solid #f5f5f5;
   }
-  
+
   .kb-default-menubutton {
     color: #666;
     background: #f9f9f9;
@@ -295,7 +285,7 @@
     border-radius: 2px;
     padding: 2px;
   }
-  
+
   .kb-default-menubutton:hover {
     color: #3a9763;
     background: none;
@@ -304,7 +294,7 @@
   .kb-closebtn:hover {
     color: #ff0000;
   }
-  
+
   .kb-default-langs {
     background: #fff;
     border-right: none;
@@ -312,30 +302,29 @@
     box-shadow: -5px 5px 0px rgba(0, 0, 0, 0.05);
     width: 135px;
   }
-  
+
   .kb-default-show {
     color: #353535;
   }
-  
+
   .kb-default-hide {
     color: #aaa;
   }
-  
-  
+
   /* Blue ================================================================================================================*/
-  
+
   .kb-blue-container {
     background: #88c2ea;
     box-shadow: 0px 2px 20px #15354c;
     border: 1px solid #15354c;
   }
-  
+
   .kb-blue-button {
     background: #88c2ea;
     color: #FFF;
     border: 1px solid #333;
   }
-  
+
   .kb-blue-key {
     background: #94c4fe;
     border: 1px solid #4864a9;
@@ -344,12 +333,12 @@
     -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, .2);
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, .2);
   }
-  
+
   .kb-blue-key:hover {
     background: #ccc;
     box-shadow: none;
   }
-  
+
   .kb-blue-menubar {
     background: #0d4e7c;
     -moz-border-radius: 0px 15px 15px 0px;
@@ -357,16 +346,16 @@
     border-radius: 0px 15px 15px 0px;
     border-left: 2px solid #15354c;
   }
-  
+
   .kb-blue-menubutton {
     color: #8eb2cc;
     text-shadow: 0px 1px 0px #000;
   }
-  
+
   .kb-blue-menubutton:hover {
     color: #FFF;
   }
-  
+
   .kb-blue-langs {
     background: #0d4e7c;
     border: 2px solid #15354c;
@@ -375,30 +364,29 @@
     text-shadow: 0px 1px 0px #000;
     box-shadow: -13px 0px 25px #15354c;
   }
-  
+
   .kb-blue-show {
     color: #000;
   }
-  
+
   .kb-blue-hide {
     color: #999;
   }
-  
-  
+
   /* Green ===============================================================================================================*/
-  
+
   .kb-green-container {
     background: #58bc6f;
     box-shadow: 0px 2px 20px #13401e;
     border: 1px solid #13401e;
   }
-  
+
   .kb-green-button {
     background: #58bc6f;
     color: #FFF;
     border: 1px solid #333;
   }
-  
+
   .kb-green-key {
     background: #54bc3e;
     border: 1px solid #1d6511;
@@ -407,12 +395,12 @@
     -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, .2);
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, .2);
   }
-  
+
   .kb-green-key:hover {
     background: #ccc;
     box-shadow: none;
   }
-  
+
   .kb-green-menubar {
     background: #127a2b;
     -moz-border-radius: 0px 15px 15px 0px;
@@ -420,16 +408,16 @@
     border-radius: 0px 15px 15px 0px;
     border-left: 2px solid #13401e;
   }
-  
+
   .kb-green-menubutton {
     color: #8dd09d;
     text-shadow: 0px 1px 0px #000;
   }
-  
+
   .kb-green-menubutton:hover {
     color: #fff;
   }
-  
+
   .kb-green-langs {
     background: #127a2b;
     border: 2px solid #13401e;
@@ -438,30 +426,30 @@
     text-shadow: 0px 1px 0px #000;
     box-shadow: -13px 0px 25px #13401e;
   }
-  
+
   .kb-green-show {
     color: #000;
   }
-  
+
   .kb-green-hide {
     color: #666;
   }
-  
-  
+
+
   /* Red =================================================================================================================*/
-  
+
   .kb-red-container {
     background: #f42525;
     box-shadow: 0px 2px 20px #690a13;
     border: 1px solid #690a13;
   }
-  
+
   .kb-red-button {
     background: #f42525;
     color: #FFF;
     border: 1px solid #333;
   }
-  
+
   .kb-red-key {
     background: #f1ea9c;
     border: 1px solid #920916;
@@ -470,12 +458,12 @@
     -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, .2);
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, .2);
   }
-  
+
   .kb-red-key:hover {
     background: #ccc;
     box-shadow: none;
   }
-  
+
   .kb-red-menubar {
     background: #971824;
     -moz-border-radius: 0px 15px 15px 0px;
@@ -483,16 +471,16 @@
     border-radius: 0px 15px 15px 0px;
     border-left: 2px solid #690a13;
   }
-  
+
   .kb-red-menubutton {
     color: #FFD5D6;
     text-shadow: 0px 1px 0px #000;
   }
-  
+
   .kb-red-menubutton:hover {
     color: #FFF;
   }
-  
+
   .kb-red-langs {
     background: #971824;
     border: 2px solid #690a13;
@@ -501,30 +489,30 @@
     text-shadow: 0px 1px 0px #000;
     box-shadow: -13px 0px 25px #690a13;
   }
-  
+
   .kb-red-show {
     color: #000;
   }
-  
+
   .kb-red-hide {
     color: #999;
   }
-  
-  
+
+
   /* Yellow ==============================================================================================================*/
-  
+
   .kb-yellow-container {
     background: #e1d54a;
     box-shadow: 0px 2px 20px #57540d;
     border: 1px solid #57540d;
   }
-  
+
   .kb-yellow-button {
     background: #e1d54a;
     color: #FFF;
     border: 1px solid #333;
   }
-  
+
   .kb-yellow-key {
     background: #e5df99;
     border: 1px solid #9d992c;
@@ -533,12 +521,12 @@
     -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, .2);
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, .2);
   }
-  
+
   .kb-yellow-key:hover {
     background: #ccc;
     box-shadow: none;
   }
-  
+
   .kb-yellow-menubar {
     background: #878322;
     -moz-border-radius: 0px 15px 15px 0px;
@@ -546,16 +534,16 @@
     border-radius: 0px 15px 15px 0px;
     border-left: 2px solid #57540d;
   }
-  
+
   .kb-yellow-menubutton {
     color: #FFFFAE;
     text-shadow: 0px 1px 0px #000;
   }
-  
+
   .kb-yellow-menubutton:hover {
     color: #FFF;
   }
-  
+
   .kb-yellow-langs {
     background: #878322;
     border: 2px solid #57540d;
@@ -564,30 +552,30 @@
     text-shadow: 0px 1px 0px #000;
     box-shadow: -13px 0px 25px #57540d;
   }
-  
+
   .kb-yellow-show {
     color: #000;
   }
-  
+
   .kb-yellow-hide {
     color: #bbb;
   }
-  
-  
+
+
   /* Black ==============================================================================================================*/
-  
+
   .kb-black-container {
     background: #0b0b0b;
     box-shadow: 0px 2px 20px #333;
     border: 1px solid #333;
   }
-  
+
   .kb-black-button {
     background: #3f3f3f;
     color: #FFF;
     border: 1px solid #333;
   }
-  
+
   .kb-black-key {
     background: #a8a7a7;
     border: 1px solid #333;
@@ -596,13 +584,13 @@
     -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, .2);
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, .2);
   }
-  
+
   .kb-black-key:hover {
     background: #ccc;
     box-shadow: none;
     color: #000;
   }
-  
+
   .kb-black-menubar {
     background: #000;
     -moz-border-radius: 0px 15px 15px 0px;
@@ -610,16 +598,16 @@
     border-radius: 0px 15px 15px 0px;
     border-left: 2px solid #333;
   }
-  
+
   .kb-black-menubutton {
     color: #999;
     text-shadow: 0px 1px 0px #000;
   }
-  
+
   .kb-black-menubutton:hover {
     color: #FFF;
   }
-  
+
   .kb-black-langs {
     background: #000;
     border: 2px solid #333;
@@ -628,22 +616,21 @@
     text-shadow: 0px 1px 0px #000;
     box-shadow: -13px 0px 25px #333;
   }
-  
+
   .kb-black-show {
     color: #fff;
   }
-  
+
   .kb-black-hide {
     color: #333;
   }
-  
-  
+
   /* =========================        SKINS END         ============================ */
-  
-  
+
+
   /* this should stay last to overlay default colors */
-  
+
   .kb-activekey {
     background: #f1f1f1;
-    color: #353535;
+    color: #3d691a;
   }

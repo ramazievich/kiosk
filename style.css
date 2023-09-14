@@ -66,17 +66,10 @@ body {
     font-family: var(--font-fam);
 }
 
-.kiosk_header:hover > a > i,
-.kiosk_header:hover > a > span {
+.kiosk_header:hover>a>i,
+.kiosk_header:hover>a>span {
     color: rgb(0, 128, 64);
 }
-
-
-
-/*
-.su_icon-shopping-list:hover {
-    color:  rgb(0, 128, 64);
-}*/
 
 .kiosk_header {
     display: flex;
@@ -85,13 +78,10 @@ body {
     align-content: center;
     justify-content: space-between;
     align-items: center;
-    /*  margin: 30px 80px;*/
     margin: 2% 6%;
 }
 
 #kiosk_slider-wrp {
-    /*width: 80%;
-  width: 1200px;*/
     width: 75%;
     overflow: hidden;
     margin: 0 auto;
@@ -170,6 +160,20 @@ li.kiosk_items span {
     bottom: -150px;
 }
 
+@keyframes animate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+}
+
 .kiosk_bg-fon-circles li:nth-child(1) {
     left: 25%;
     width: 80px;
@@ -245,30 +249,14 @@ li.kiosk_items span {
     animation-duration: 22s;
 }
 
-@keyframes animate {
-    0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-        border-radius: 0;
-    }
-
-    100% {
-        transform: translateY(-1000px) rotate(720deg);
-        opacity: 0;
-        border-radius: 50%;
-    }
-}
-
 /*Стили для поиска*/
 
 .kiosk_search-wrp {
-    /* background: var(--color-dark);*/
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100%;
-    /*margin-top: 250px;*/
-    margin-top: 20%;*/
+    margin-top: 15%;
     margin-bottom: 1%;
 }
 
@@ -283,7 +271,6 @@ li.kiosk_items span {
     height: var(--height);
     font-family: var(--font-fam);
     border: 0;
-    /*color: var(--color-dark);*/
     font-size: 29px;
 }
 
@@ -308,8 +295,7 @@ li.kiosk_items span {
 }
 
 .kiosk_search-button {
-   display: none;
-    /* position: absolute;*/
+    display: none;
     top: 0;
     right: 0;
     width: var(--btn-width);
@@ -326,11 +312,9 @@ li.kiosk_items span {
 
 .kiosk_search-input:not(:placeholder-shown)+.kiosk_search-button {
     display: block;
-    /*border: 6px solid #FFCD05;*/
     opacity: 100%;
     cursor: pointer;
 }
-
 
 form.kiosk_search {
     display: flex;
@@ -350,14 +334,6 @@ form.kiosk_search {
     color: #fff;
 }
 
-
-
-
-header {
-    opacity: 0;
-    animation: ani 2.5s forwards;
-  }
-  @keyframes ani {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
-  }
+.kiosk_body {
+    position: relative;
+}
