@@ -75,6 +75,8 @@ body {
     align-content: center;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
+    outline: none;
 }
 
 .su_icon-shopping-list {

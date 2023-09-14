@@ -142,7 +142,7 @@ jQuery(document).ready(function () {
             })
 
             // дает клавиатуре возможность перетаскивания
-            drag('.kb-container');
+            //drag('.kb-container');
 
             aplyLayout(_keyboard.settings.skin);
 
