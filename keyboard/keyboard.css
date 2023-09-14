@@ -23,7 +23,7 @@
     justify-content: center;
     bottom: 0px;
     left: 0px;
-    width: 100vw;
+    width: 98vw;
     height: 100vh;
     opacity: 0;
     animation: ani 0.7s forwards;
@@ -141,14 +141,14 @@
   }
 
   .kb-letter {
-    width: 55px;
-    height: 55px;
+    width: 60px;
+    height: 60px;
     position: relative;
   }
 
   .kb-fkey {
     width: 90px;
-    height: 55px;
+    height: 60px;
     position: relative;
     font-size: 12px;
   }
