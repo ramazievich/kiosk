@@ -4,7 +4,7 @@ var kb;
 var content = false;
 var content_height = 0;
 jQuery(document).ready(function () {
-    kb = jQuery('.search').keyboard({
+    kb = jQuery('.kiosk_search-input').keyboard({
         language: 'ru',
         startAs: 'hidden',
         debug: 'false'
@@ -693,19 +693,37 @@ jQuery(document).ready(function () {
 
         /**
          * Open keyboard
+         * 
+         * 
          */
-        kb.openKeyboard = function () {
-            kb.container.toggle();
-            $('.search').focus();
-        }
+        $(document).ready(function() {
+            $('.kiosk_search-input').focus(function() {
+                // При фокусе на поле ввода, показать блок
+                kb.container.show();
+            });
+        
+            $('.kiosk_search-input').blur(function() {
+                // При потере фокуса на поле ввода, скрыть блок
+                kb.container.hide();
+            });
+        });
 
+   
+        kb.openKeyboard = function () {        
+            kb.container.toggle();
+           $('.kiosk_search-input').focus();
+        }
+        
         /**
          * Close keyboard
          */
+
         kb.closeKeyboard = function () {
             kb.container.hide();
-            $('.search').blur();
+            $('.kiosk_search-input').blur();
         }
+
+     
 
         // initialize plugin
         init();

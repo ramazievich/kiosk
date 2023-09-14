@@ -6,26 +6,48 @@
 
 i,
 a,
-svg,
-img,
 button:hover {
     cursor: pointer;
 }
 
-
 :root {
     --rad: 11px;
     --dur: 0.3s;
-    /*--color-dark: #2f2f2f;*/
+    --color-dark: #2f2f2f;
     --color-light: #fff;
     --color-brand: #3a9763;
     --color-grey: #817f7f;
-    /*rgba(0, 128, 0, 1)*/
+    --color-orange: #ffcd05;
     --font-fam: "Lato", sans-serif;
     --height: 80px;
     --btn-width: 96px;
     --bez: cubic-bezier(0, 0, 0.43, 1.49);
 }
+
+/*Скроллбар*/
+/* Стилизация самого скроллбара */
+::-webkit-scrollbar {
+    width: 8px; /* Ширина скроллбара */
+    background-color: var(--color-brand);
+}
+
+/* Стилизация фона скроллбара */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px #3a9762bd;
+    background-color: var(--color-brand);  /* Цвет ползунка */
+}
+
+/* Стилизация ползунка скроллбара */
+::-webkit-scrollbar-thumb {
+    background-color: #ffcd05ec; /* Цвет ползунка */
+    border-radius: 1px; /* Скругление углов ползунка */ 
+}
+
+/* Изменение стиля при наведении на ползунок */
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-orange); /* Измененный цвет ползунка при наведении */
+}
+
 
 /*светлая-темная тема*/
 /*
@@ -66,11 +88,6 @@ body {
     font-family: var(--font-fam);
 }
 
-.kiosk_header:hover>a>i,
-.kiosk_header:hover>a>span {
-    color: rgb(0, 128, 64);
-}
-
 .kiosk_header {
     display: flex;
     flex-direction: row;
@@ -79,6 +96,11 @@ body {
     justify-content: space-between;
     align-items: center;
     margin: 2% 6%;
+}
+
+.kiosk_header:hover>a>i,
+.kiosk_header:hover>a>span {
+    color: rgb(0, 128, 64);
 }
 
 #kiosk_slider-wrp {
@@ -133,7 +155,7 @@ li.kiosk_items span {
     color: #3a9763;
 }
 
-/* анимированый фон*/
+/* анимированый фон https://codepen.io/alvarotrigo/pen/GRvYNax*/
 .kiosk_bg-fon {
     width: 100%;
     height: 100%;
