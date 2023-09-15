@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'su_font';
-  src:  url('/su_font-v3.0/fonts/su_font.eot');
-  src:  url('/su_font-v3.0/fonts/su_font.eot') format('embedded-opentype'),
-    url('/su_font-v3.0/fonts/su_font.ttf') format('truetype'),
-    url('/su_font-v3.0/fonts/su_font.woff') format('woff'),
-    url('/su_font-v3.0/fonts/su_font.svg') format('svg');
+  src:  url('fonts/su_font.eot?43dkxh');
+  src:  url('fonts/su_font.eot?43dkxh#iefix') format('embedded-opentype'),
+    url('fonts/su_font.ttf?43dkxh') format('truetype'),
+    url('fonts/su_font.woff?43dkxh') format('woff'),
+    url('fonts/su_font.svg?43dkxh#su_font') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -12,7 +12,7 @@
 
 [class^="su_icon-"], [class*=" su_icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'su_font';
+  font-family: 'su_font' !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
@@ -175,16 +175,16 @@
 .su_icon-close-burger_menu:before {
   content: "\e931";
 }
-.su_icon-color_1 .path1:before {
+.su_icon-11 .path1:before {
   content: "\e932";
   color: rgb(91, 91, 91);
 }
-.su_icon-color_1 .path2:before {
+.su_icon-11 .path2:before {
   content: "\e933";
   margin-left: -1em;
   color: rgb(76, 76, 76);
 }
-.su_icon-color_1 .path3:before {
+.su_icon-11 .path3:before {
   content: "\e934";
   margin-left: -1em;
   color: rgb(173, 173, 173);
@@ -730,13 +730,13 @@
 .su_icon-sravnenie2:before {
   content: "\e9b9";
 }
-.su_icon-sravnenie3-01:before {
+.su_icon-sravnenie31:before {
   content: "\e9ba";
 }
-.su_icon-sravnenie3-01-01:before {
+.su_icon-sravnenie3:before {
   content: "\e9bb";
 }
-.su_icon-sravnenie3-01-02-01:before {
+.su_icon-sravnenie32:before {
   content: "\e9bc";
 }
 .su_icon-ucenca-icon:before {

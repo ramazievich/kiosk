@@ -10,6 +10,19 @@ button:hover {
     cursor: pointer;
 }
 
+.hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
 :root {
     --rad: 11px;
     --dur: 0.3s;
@@ -18,6 +31,7 @@ button:hover {
     --color-brand: #3a9763;
     --color-grey: #817f7f;
     --color-orange: #ffcd05;
+    --color-header: linear-gradient(90deg, #008000 50%, #008A00 57.58%);
     --font-fam: "Lato", sans-serif;
     --height: 80px;
     --btn-width: 96px;
@@ -27,25 +41,30 @@ button:hover {
 /*Скроллбар*/
 /* Стилизация самого скроллбара */
 ::-webkit-scrollbar {
-    width: 15px; /* Ширина скроллбара */
+    width: 15px;
+    /* Ширина скроллбара */
     background-color: var(--color-brand);
 }
 
 /* Стилизация фона скроллбара */
 ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px #3a9762bd;
-    background-color: var(--color-brand);  /* Цвет ползунка */
+    background-color: var(--color-brand);
+    /* Цвет ползунка */
 }
 
 /* Стилизация ползунка скроллбара */
 ::-webkit-scrollbar-thumb {
-    background-color: #ffcd05d3; /* Цвет ползунка */
-    border-radius: 1px; /* Скругление углов ползунка */ 
+    background-color: #ffcd05d3;
+    /* Цвет ползунка */
+    border-radius: 1px;
+    /* Скругление углов ползунка */
 }
 
 /* Изменение стиля при наведении на ползунок */
 ::-webkit-scrollbar-thumb:hover {
-    background-color: var(--color-orange); /* Измененный цвет ползунка при наведении */
+    background-color: var(--color-orange);
+    /* Измененный цвет ползунка при наведении */
 }
 
 
@@ -79,7 +98,7 @@ body {
     outline: none;
 }
 
-.su_icon-shopping-list {
+.kiosk_cart-wrp .su_icon-shopping-list {
     color: var(--color-grey);
     font-size: 113px;
 }
@@ -280,7 +299,7 @@ li.kiosk_items span {
     align-items: center;
     justify-content: center;
     min-height: 100%;
-    margin-top: 15%;
+    margin-top: 13%;
     margin-bottom: 1%;
 }
 
@@ -360,4 +379,98 @@ form.kiosk_search {
 
 .kiosk_body {
     position: relative;
+}
+
+
+
+/*стили для общей шапки*/
+.kiosk_header-main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    background: var(--color-header);
+}
+
+.kiosk_search-main {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+
+/*стили для поиска в общей шапке*/
+.kiosk_search-input-main {
+    width: 423px;
+    font-size: 17px;
+    height: 40px;
+    padding: 2px 27px 2px 4px;
+    margin: 0 2px 0 0;
+    border-radius: 3px 0 0 3px;
+    border: 1px solid #5bb759;
+}
+
+.kiosk_search-button-main button {
+    height: 40px;
+    background: #ffd426;
+    box-shadow: none;
+    padding: 1px 10px;
+    border-radius: 0 3px 3px 0;
+    color: black;
+    font-weight: 600;
+    text-shadow: none;
+    border: 1px solid #5bb759;
+    margin-left: -3px;
+}
+
+button.kiosk_search-button-main {
+    width: 64px;
+    background: var(--color-orange);
+    border: none;
+}
+
+/*конец стилей для поиска в общей шапке*/
+
+.kiosk_sravnenie-cart-main-wrp {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+
+}
+
+.kiosk_header-main a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.kiosk_header-main a:hover {
+    text-decoration: none;
+    color: #fff3b5;
+}
+
+
+
+
+.kiosk_cart-main-wrp,
+.kiosk_sravnenie-main-wrp {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.kiosk_header-main i {
+    font-size: 48px;
 }

@@ -62,7 +62,7 @@ class Su_font {
   static const IconData close = IconData(0xe92f, fontFamily: _fontFamily);
   static const IconData close2 = IconData(0xe930, fontFamily: _fontFamily);
   static const IconData close_burger_menu = IconData(0xe931, fontFamily: _fontFamily);
-  static const IconData color_1 = IconData(0xe932, fontFamily: _fontFamily);
+  static const IconData 11 = IconData(0xe932, fontFamily: _fontFamily);
   static const IconData comments = IconData(0xe935, fontFamily: _fontFamily);
   static const IconData copy = IconData(0xe936, fontFamily: _fontFamily);
   static const IconData D = IconData(0xe937, fontFamily: _fontFamily);
@@ -125,9 +125,9 @@ class Su_font {
   static const IconData sravnenie = IconData(0xe9b7, fontFamily: _fontFamily);
   static const IconData sravnenie21 = IconData(0xe9b8, fontFamily: _fontFamily);
   static const IconData sravnenie2 = IconData(0xe9b9, fontFamily: _fontFamily);
-  static const IconData sravnenie3_01 = IconData(0xe9ba, fontFamily: _fontFamily);
-  static const IconData sravnenie3_01_01 = IconData(0xe9bb, fontFamily: _fontFamily);
-  static const IconData sravnenie3_01_02_01 = IconData(0xe9bc, fontFamily: _fontFamily);
+  static const IconData sravnenie31 = IconData(0xe9ba, fontFamily: _fontFamily);
+  static const IconData sravnenie3 = IconData(0xe9bb, fontFamily: _fontFamily);
+  static const IconData sravnenie32 = IconData(0xe9bc, fontFamily: _fontFamily);
   static const IconData ucenca_icon = IconData(0xe9bd, fontFamily: _fontFamily);
   static const IconData vacansii = IconData(0xe9be, fontFamily: _fontFamily);
   static const IconData wall = IconData(0xe9bf, fontFamily: _fontFamily);

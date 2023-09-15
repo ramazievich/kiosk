@@ -148,7 +148,7 @@
 .su_icon-close-burger_menu {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe931;');
 }
-.su_icon-color_1 {
+.su_icon-11 {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe932;');
 }
 .su_icon-comments {
@@ -337,13 +337,13 @@
 .su_icon-sravnenie2 {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe9b9;');
 }
-.su_icon-sravnenie3-01 {
+.su_icon-sravnenie31 {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe9ba;');
 }
-.su_icon-sravnenie3-01-01 {
+.su_icon-sravnenie3 {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe9bb;');
 }
-.su_icon-sravnenie3-01-02-01 {
+.su_icon-sravnenie32 {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe9bc;');
 }
 .su_icon-ucenca-icon {
