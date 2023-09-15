@@ -27,7 +27,7 @@ button:hover {
 /*Скроллбар*/
 /* Стилизация самого скроллбара */
 ::-webkit-scrollbar {
-    width: 10px; /* Ширина скроллбара */
+    width: 15px; /* Ширина скроллбара */
     background-color: var(--color-brand);
 }
 
@@ -39,7 +39,7 @@ button:hover {
 
 /* Стилизация ползунка скроллбара */
 ::-webkit-scrollbar-thumb {
-    background-color: #ffcd05ec; /* Цвет ползунка */
+    background-color: #ffcd05d3; /* Цвет ползунка */
     border-radius: 1px; /* Скругление углов ползунка */ 
 }
 
