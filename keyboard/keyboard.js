@@ -15,6 +15,9 @@ jQuery(document).ready(function () {
 
 });
 
+
+
+
 // Keyboard JS
 
 ;
@@ -123,7 +126,7 @@ jQuery(document).ready(function () {
 
             // создает контейнер клавиатуры
             kb.container = $("<div unselectable='on' id='kb-container-id' class='kb-container' />");
-            $('#kiosk_body-id').append(kb.container);
+            $('body').append(kb.container);
 
             // добавляет функцию кнопки закрытия, чтобы закрыть клавиатуру
             if (_keyboard.settings.startAs == 'hidden') kb.closeKeyboard();
@@ -691,11 +694,11 @@ jQuery(document).ready(function () {
             });
         });
 
-
         kb.openKeyboard = function () {
             kb.container.toggle();
             $('.kiosk_search').focus();
         }
+
 
         /**
          * Закрывает клавиатуру
@@ -705,8 +708,6 @@ jQuery(document).ready(function () {
             kb.container.hide();
             $('.kiosk_search').blur();
         }
-
-
 
         // инициализация плагина
         init();

@@ -303,7 +303,7 @@ li.kiosk_items span {
     margin-bottom: 1%;
 }
 
-.kiosk_search .kiosk_search {
+.kiosk_search-form .kiosk_search {
     width: 480px;
     background: var(--color-brand);
     border-radius: var(--rad);
@@ -359,7 +359,7 @@ li.kiosk_items span {
     cursor: pointer;
 }
 
-form.kiosk_search {
+form.kiosk_search-form {
     display: flex;
 }
 
