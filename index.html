@@ -29,13 +29,14 @@
   <container class="kiosk_container">
 
     <!--хедер для всех страниц кроме главной-->
-    <div class="kiosk_header-main ">
+    <div class="kiosk_header-main hidden">
       <a class="kiosk_header-logo-wrp" href="#">
         <img class="kiosk_header-logo-main" src="/img/logo-su.svg" width="370" alt="Стройудача" />
       </a>
       <div class="kiosk_search-main-wrp">
         <form class="kiosk_search-main" role="search" onsubmit="location.reload(); return false;">
-          <input class="kiosk_search-input-main kiosk_search" type="search"
+           <!--класс kiosk_search нужно вставлять в input (без него клавиатура не работает). Одновременно в двух input класс kiosk_search не работает. Только в одном-->
+          <input class="kiosk_search-input-main" type="search"
             onClick="kb.openKeyboard();" placeholder="Что ищем?" maxLength="100" name="name" autocomplete="off"
             required />
           <button class="kiosk_search-button-main" type="submit">Найти</button>
@@ -62,9 +63,10 @@
       </a>
     </div>
     <div class="kiosk_body">
-      <div class="kiosk_search-wrp hidden">
+      <div class="kiosk_search-wrp ">
         <form class="kiosk_search-form" role="search" onsubmit="location.reload(); return false;">
           <label class="kiosk_search-label" for="search">Что ищем?</label>
+          <!--класс kiosk_search нужно вставлять в input (без него клавиатура не работает). Одновременно в двух input класс kiosk_search не работает. Только в одном-->
           <input class="kiosk_search-input kiosk_search" type="search"
             onClick="kb.openKeyboard();" placeholder="Что ищем?" maxLength="100" name="name" autocomplete="off"
             required />
