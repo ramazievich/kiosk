@@ -28,7 +28,7 @@ jQuery(document).ready(function () {
         language: 'ru', //'en','ru'
 
         //DEV
-        debug: false, // true, false
+        debug: true, // true, false
 
     };
 
